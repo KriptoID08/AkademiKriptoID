@@ -10,12 +10,23 @@
   <!-- Judul -->
   <h1>Modul by KriptoID</h1>
 
-  <!-- Logo pojok kanan atas -->
-  <img src="images/kripto.jpeg" alt="Logo KriptoID" class="logo-kanan" />
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KriptoID APK</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Logo di kanan atas -->
+  <img src="images/kripto.jpeg" alt="Logo KriptoID" class="logo-kanan">
 
-  <!-- Peringatan di tengah atas -->
-<div class="peringatan-tengah">Mohon tidak membagikan link kepada siapapun</div>
+  <!-- Judul -->
+  <h1>Modul by KriptoID</h1>
 
+  <!-- Pesan di tengah atas -->
+  <div class="peringatan-atas">Mohon tidak membagikan link</div>
 
   <!-- Sidebar kategori -->
   <div class="sidebar">
@@ -30,15 +41,24 @@
     </ul>
   </div>
 
-  <!-- Konten utama -->
+  <!-- Konten utama (kanan dari sidebar) -->
   <div class="main-content">
     <!-- Search bar -->
     <input type="text" id="search-input" placeholder="Cari modul..." />
 
-    <!-- Container modul -->
+    <!-- Container untuk modul-modul -->
     <div id="modul-container" class="modul-container"></div>
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Proteksi password -->
+  <script>
+    const password = prompt("Masukkan password untuk mengakses situs ini:");
+    if (password !== "jangan disebar") {
+      alert("Password salah! Akses ditolak.");
+      document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>Akses Ditolak</h1>";
+    }
+  </script>
 </body>
 </html>
