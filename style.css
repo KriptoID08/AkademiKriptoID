@@ -184,3 +184,29 @@ h1 {
 .kategori-link:hover {
   background-color: #9c27b0;
 }
+/* Baris modul horizontal untuk versi mobile */
+#row-1, #row-2, #row-3 {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  #modul-container {
+    display: none;
+  }
+
+  #row-1, #row-2, #row-3 {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+  }
+
+  #row-1 .modul,
+  #row-2 .modul,
+  #row-3 .modul {
+    flex: 0 0 calc(100vw / 3 - 24px);
+    scroll-snap-align: start;
+  }
+}
