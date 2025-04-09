@@ -3,55 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KriptoID APK</title>
+  <title>Modul by KriptoID</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Logo di kanan atas -->
-  <img src="images/kripto.jpeg" alt="Logo KriptoID" class="logo-kanan">
 
   <!-- Judul -->
   <h1>Modul by KriptoID</h1>
 
-  <!-- Pesan di tengah atas -->
-  <div class="peringatan-tengah">Mohon tidak membagikan link</div>
+  <!-- Peringatan -->
+  <div class="peringatan-tengah">Mohon tidak menyebarkan link</div>
+
+  <!-- Logo kanan atas -->
+  <img src="images/kripto.jpeg" alt="Logo" class="logo-kanan" />
 
   <!-- Sidebar kategori -->
   <div class="sidebar">
     <h2>Kategori</h2>
-    <ul id="kategori-filter">
-      <li data-kategori="all" class="active">Semua</li>
+    <ul id="kategori-list">
+      <li data-kategori="semua" class="active">Semua</li>
       <li data-kategori="e book">E-Book</li>
       <li data-kategori="live class">Live Class</li>
       <li data-kategori="trading">Trading</li>
       <li data-kategori="research">Research</li>
       <li data-kategori="crypto">Crypto</li>
-      <li class="kategori-link" onclick="window.open('https://lynk.id/kriptoid', '_blank')">Beli Akses</li>
     </ul>
   </div>
 
-  <!-- Konten utama (kanan dari sidebar) -->
-  <div class="main-content">
-    <!-- Search bar -->
-    <input type="text" id="search-input" placeholder="Cari modul..." />
+  <!-- Search -->
+  <input type="text" id="search-input" placeholder="Cari modul...">
 
-    <!-- Container untuk modul-modul -->
-    <div id="modul-container" class="modul-container">
-      <div class="modul-row" id="row-1"></div>
-      <div class="modul-row" id="row-2"></div>
-      <div class="modul-row" id="row-3"></div>
-    </div>
+  <!-- Modul Container (Desktop) -->
+  <div class="modul-container" id="modul-container">
+    <!-- Script.js akan isi otomatis -->
   </div>
 
-  <script src="script.js"></script>
+  <!-- Modul Baris Mobile -->
+  <div id="row-1"></div>
+  <div id="row-2"></div>
+  <div id="row-3"></div>
 
-  <!-- Proteksi password -->
-  <script>
-    const password = prompt("Masukkan password untuk mengakses situs ini:");
-    if (password !== "JANGAN DISEBAR") {
-      alert("Password salah! Akses ditolak.");
-      document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>Akses Ditolak, Silahkan beli Access dulu</h1>";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
