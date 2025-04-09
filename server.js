@@ -6,7 +6,7 @@ const port = 3000;
 
 // Middleware untuk proteksi password (Basic Auth)
 app.use((req, res, next) => {
-  const auth = { login: 'KriptoID', password: 'gaboleh share' }; // Ganti sesuai kebutuhan
+  const auth = { login: 'KriptoID', password: 'JANGAN DISEBAR' }; // Ganti sesuai kebutuhan
 
   // Ambil Authorization header
   const b64auth = (req.headers.authorization || '').split(' ')[1] || '';

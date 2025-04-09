@@ -7,18 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Judul -->
-  <h1>Modul by KriptoID</h1>
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KriptoID APK</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
   <!-- Logo di kanan atas -->
   <img src="images/kripto.jpeg" alt="Logo KriptoID" class="logo-kanan">
 
@@ -26,7 +14,7 @@
   <h1>Modul by KriptoID</h1>
 
   <!-- Pesan di tengah atas -->
-  <div class="peringatan-atas">Mohon tidak membagikan link</div>
+  <div class="peringatan-tengah">Mohon tidak membagikan link</div>
 
   <!-- Sidebar kategori -->
   <div class="sidebar">
@@ -38,6 +26,7 @@
       <li data-kategori="trading">Trading</li>
       <li data-kategori="research">Research</li>
       <li data-kategori="crypto">Crypto</li>
+      <li class="kategori-link" onclick="window.open('https://lynk.id/kriptoid', '_blank')">Beli Akses</li>
     </ul>
   </div>
 
@@ -55,9 +44,9 @@
   <!-- Proteksi password -->
   <script>
     const password = prompt("Masukkan password untuk mengakses situs ini:");
-    if (password !== "jangan disebar") {
+    if (password !== "JANGAN DISEBAR") {
       alert("Password salah! Akses ditolak.");
-      document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>Akses Ditolak</h1>";
+      document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>Akses Ditolak, Silahkan beli Access dulu</h1>";
     }
   </script>
 </body>
