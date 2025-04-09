@@ -28,15 +28,17 @@
   <!-- Sidebar kategori -->
   <div class="sidebar">
     <h2>Kategori</h2>
-    <ul id="kategori-filter">
-      <li class="active" data-kategori="all">Semua</li>
+    <ul id="kategori-list">
+      <li data-kategori="semua" class="active">Semua</li>
       <li data-kategori="e book">E-Book</li>
       <li data-kategori="live class">Live Class</li>
       <li data-kategori="trading">Trading</li>
       <li data-kategori="research">Research</li>
       <li data-kategori="crypto">Crypto</li>
+      <li class="kategori-link" onclick="window.open('https://example.com/mentorship', '_blank')">Mentorship</li>
     </ul>
   </div>
+  
 
   <!-- Search bar -->
   <input type="text" id="search-input" placeholder="Cari modul..." />
