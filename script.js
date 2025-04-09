@@ -88,7 +88,7 @@ gambarModul.forEach((gambar, index) => {
   // Desktop
   modulContainer.appendChild(divModul);
 
-  // Mobile rows
+  // Mobile rows (3 baris horizontal scroll)
   const cloned = divModul.cloneNode(true);
   if (index % 3 === 0) {
     row1.appendChild(cloned);
