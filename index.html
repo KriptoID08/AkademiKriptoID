@@ -8,10 +8,18 @@
 </head>
 <body>
 
-  <!-- Judul -->
+  <!-- Form Password -->
+  <div id="password-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;">
+    <h2 style="color: white; margin-bottom: 20px;">Masukkan Password</h2>
+    <input type="password" id="password-input" placeholder="Password..." style="padding: 10px; font-size: 16px; border-radius: 8px; border: none; margin-bottom: 10px;">
+    <button onclick="checkPassword()" style="padding: 10px 20px; background-color: purple; color: white; border: none; border-radius: 8px;">Masuk</button>
+    <p id="wrong-password" style="color: red; display: none; margin-top: 10px;">Password salah!</p>
+  </div>
+
+  <!-- Judul kiri atas -->
   <h1>Modul by KriptoID</h1>
 
-  <!-- Peringatan -->
+  <!-- Peringatan tengah atas -->
   <div class="peringatan-tengah">Mohon tidak menyebarkan link</div>
 
   <!-- Logo kanan atas -->
@@ -20,8 +28,8 @@
   <!-- Sidebar kategori -->
   <div class="sidebar">
     <h2>Kategori</h2>
-    <ul id="kategori-list">
-      <li data-kategori="semua" class="active">Semua</li>
+    <ul id="kategori-filter">
+      <li class="active" data-kategori="all">Semua</li>
       <li data-kategori="e book">E-Book</li>
       <li data-kategori="live class">Live Class</li>
       <li data-kategori="trading">Trading</li>
@@ -30,19 +38,32 @@
     </ul>
   </div>
 
-  <!-- Search -->
-  <input type="text" id="search-input" placeholder="Cari modul...">
+  <!-- Search bar -->
+  <input type="text" id="search-input" placeholder="Cari modul..." />
 
-  <!-- Modul Container (Desktop) -->
-  <div class="modul-container" id="modul-container">
-    <!-- Script.js akan isi otomatis -->
-  </div>
+  <!-- Kontainer modul versi desktop -->
+  <div class="modul-container" id="modul-container"></div>
 
-  <!-- Modul Baris Mobile -->
+  <!-- Kontainer baris scroll horizontal versi mobile -->
   <div id="row-1"></div>
   <div id="row-2"></div>
   <div id="row-3"></div>
 
+  <!-- Script untuk password -->
+  <script>
+    const correctPassword = "DILARANG SHARE"; // ganti sesuai kebutuhan
+
+    function checkPassword() {
+      const input = document.getElementById("password-input").value;
+      if (input === correctPassword) {
+        document.getElementById("password-overlay").style.display = "none";
+      } else {
+        document.getElementById("wrong-password").style.display = "block";
+      }
+    }
+  </script>
+
+  <!-- Script utama -->
   <script src="script.js"></script>
 </body>
 </html>
