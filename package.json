@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/KriptoID08/AkademiKriptoID#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "node-fetch": "^2.7.0"
   },
