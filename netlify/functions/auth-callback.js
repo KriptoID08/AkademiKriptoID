@@ -1,4 +1,8 @@
-const fetch = require('node-fetch');
+// Wajib di paling atas untuk load .env dulu
+require('dotenv').config();
+
+// Gunakan import dinamis untuk fetch karena node-fetch versi ESM
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 exports.handler = async function(event, context) {
   const code = new URLSearchParams(event.queryStringParameters).get('code');
@@ -7,6 +11,7 @@ exports.handler = async function(event, context) {
   const CLIENT_SECRET = '2VI65jzTBio2ZV8xAIR47NlF1kZb7rlM';
   const REDIRECT_URI = 'https://kriptoid.netlify.app/.netlify/functions/auth-callback';
   const SERVER_ID = '1333476344213930094';
+  const BOT_TOKEN = process.env.BOT_TOKEN;
 
   const ALLOWED_ROLE_IDS = [
     '1333477313366724732',
@@ -18,7 +23,7 @@ exports.handler = async function(event, context) {
   ];
 
   try {
-    // 1. Tukar kode dengan access token
+    // 1. Tukar code dengan access token
     const tokenResponse = await fetch('https://discord.com/api/oauth2/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -41,15 +46,17 @@ exports.handler = async function(event, context) {
       };
     }
 
-    // 2. Ambil info user
+    // 2. Ambil info user (ID)
     const userResponse = await fetch('https://discord.com/api/users/@me', {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
     const user = await userResponse.json();
 
-    // 3. Ambil role user di server
-    const memberResponse = await fetch(`https://discord.com/api/users/@me/guilds/${SERVER_ID}/member`, {
-      headers: { Authorization: `Bearer ${accessToken}` }
+    const userId = user.id;
+
+    // 3. Ambil data member dari server (pakai bot)
+    const memberResponse = await fetch(`https://discord.com/api/guilds/${SERVER_ID}/members/${userId}`, {
+      headers: { Authorization: `Bot ${BOT_TOKEN}` }
     });
 
     const member = await memberResponse.json();
@@ -70,18 +77,15 @@ exports.handler = async function(event, context) {
     } else {
       return {
         statusCode: 403,
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        },
+        headers: { 'Access-Control-Allow-Origin': '*' },
         body: 'Akses ditolak. Anda tidak memiliki role yang dibutuhkan.'
       };
     }
+
   } catch (error) {
     return {
       statusCode: 500,
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
+      headers: { 'Access-Control-Allow-Origin': '*' },
       body: `Terjadi kesalahan: ${error.message}`
     };
   }
