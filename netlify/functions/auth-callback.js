@@ -18,7 +18,7 @@ exports.handler = async function(event, context) {
   ];
 
   try {
-    // 1. Exchange code for access token
+    // 1. Tukar kode dengan access token
     const tokenResponse = await fetch('https://discord.com/api/oauth2/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -34,41 +34,54 @@ exports.handler = async function(event, context) {
     const tokenData = await tokenResponse.json();
     const accessToken = tokenData.access_token;
 
-    // 2. Get user info
+    if (!accessToken) {
+      return {
+        statusCode: 401,
+        body: "Access token tidak ditemukan"
+      };
+    }
+
+    // 2. Ambil info user
     const userResponse = await fetch('https://discord.com/api/users/@me', {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
     const user = await userResponse.json();
 
-    // 3. Get member roles
+    // 3. Ambil role user di server
     const memberResponse = await fetch(`https://discord.com/api/users/@me/guilds/${SERVER_ID}/member`, {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
-    const member = await memberResponse.json();
 
+    const member = await memberResponse.json();
     const userRoleIds = member.roles || [];
 
-    // 4. Check if user has at least one allowed role
     const hasAccess = userRoleIds.some(role => ALLOWED_ROLE_IDS.includes(role));
 
     if (hasAccess) {
       return {
         statusCode: 302,
         headers: {
-          Location: '/index.html'
+          'Location': '/',
+          'Set-Cookie': `discord_token=${accessToken}; Path=/; HttpOnly; SameSite=Lax`,
+          'Access-Control-Allow-Origin': '*'
         },
         body: ''
       };
     } else {
       return {
         statusCode: 403,
-        body: 'Akses ditolak. Anda tidak memiliki peran yang sesuai di Discord.'
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: 'Akses ditolak. Anda tidak memiliki role yang dibutuhkan.'
       };
     }
-
   } catch (error) {
     return {
       statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
       body: `Terjadi kesalahan: ${error.message}`
     };
   }
