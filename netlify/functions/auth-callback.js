@@ -14,10 +14,10 @@ exports.handler = async function(event, context) {
   const BOT_TOKEN = process.env.BOT_TOKEN;
 
   const ALLOWED_ROLE_IDS = [
-    '1333477313366724732',
-    '1343931430639501312',
-    '1355916575873568878',
     '1335411985713729606',
+    '1355916575873568878',
+    '1343931430639501312',
+    '1360553808727380038',
     '1339093986413117502',
     '1336010335294853150'
   ];
@@ -62,6 +62,11 @@ exports.handler = async function(event, context) {
     const member = await memberResponse.json();
     const userRoleIds = member.roles || [];
 
+    // LOGGING: Tampilkan user ID dan role yang dia punya
+    console.log("User ID:", userId);
+    console.log("User Roles:", userRoleIds);
+    console.log("Allowed Roles:", ALLOWED_ROLE_IDS);
+
     const hasAccess = userRoleIds.some(role => ALLOWED_ROLE_IDS.includes(role));
 
     if (hasAccess) {
@@ -78,7 +83,7 @@ exports.handler = async function(event, context) {
       return {
         statusCode: 403,
         headers: { 'Access-Control-Allow-Origin': '*' },
-        body: 'Akses ditolak. Anda tidak memiliki role yang dibutuhkan.'
+        body: `Akses ditolak. Role kamu: ${JSON.stringify(userRoleIds)}`
       };
     }
 
