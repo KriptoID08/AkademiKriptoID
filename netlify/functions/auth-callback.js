@@ -1,12 +1,13 @@
-// Wajib di paling atas untuk load .env dulu
+// Load environment variables
 require('dotenv').config();
 
-// Gunakan import dinamis untuk fetch karena node-fetch versi ESM
+// Import fetch secara dinamis (karena node-fetch pakai ESM)
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 exports.handler = async function(event, context) {
   const code = new URLSearchParams(event.queryStringParameters).get('code');
 
+  // Konstanta konfigurasi
   const CLIENT_ID = '1359776558939639910';
   const CLIENT_SECRET = '2VI65jzTBio2ZV8xAIR47NlF1kZb7rlM';
   const REDIRECT_URI = 'https://kriptoid.netlify.app/.netlify/functions/auth-callback';
@@ -42,7 +43,7 @@ exports.handler = async function(event, context) {
     if (!accessToken) {
       return {
         statusCode: 401,
-        body: "Access token tidak ditemukan"
+        body: 'Access token tidak ditemukan'
       };
     }
 
@@ -51,7 +52,6 @@ exports.handler = async function(event, context) {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
     const user = await userResponse.json();
-
     const userId = user.id;
 
     // 3. Ambil data member dari server (pakai bot)
@@ -62,11 +62,12 @@ exports.handler = async function(event, context) {
     const member = await memberResponse.json();
     const userRoleIds = member.roles || [];
 
-    // LOGGING: Tampilkan user ID dan role yang dia punya
-    console.log("User ID:", userId);
-    console.log("User Roles:", userRoleIds);
-    console.log("Allowed Roles:", ALLOWED_ROLE_IDS);
+    // Logging untuk debug
+    console.log('User ID:', userId);
+    console.log('User Roles:', userRoleIds);
+    console.log('Allowed Roles:', ALLOWED_ROLE_IDS);
 
+    // 4. Cek apakah user punya role yang diizinkan
     const hasAccess = userRoleIds.some(role => ALLOWED_ROLE_IDS.includes(role));
 
     if (hasAccess) {
@@ -95,3 +96,4 @@ exports.handler = async function(event, context) {
     };
   }
 };
+
