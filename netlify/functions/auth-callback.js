@@ -11,7 +11,6 @@ exports.handler = async function (event, context) {
   const CLIENT_SECRET = '2VI65jzTBio2ZV8xAIR47NlF1kZb7rlM';
   const REDIRECT_URI = 'https://kriptoid.netlify.app/.netlify/functions/auth-callback';
   const SERVER_ID = '1333476344213930094';
-  const BOT_TOKEN = process.env.BOT_TOKEN;
 
   const ALLOWED_ROLE_IDS = [
     '1335411985713729606',
@@ -23,7 +22,7 @@ exports.handler = async function (event, context) {
   ];
 
   try {
-    // 1. Dapatkan access token
+    // 1. Tukar code dengan access token
     const tokenRes = await fetch('https://discord.com/api/oauth2/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -43,26 +42,31 @@ exports.handler = async function (event, context) {
       return { statusCode: 401, body: "Access token tidak ditemukan" };
     }
 
-    // 2. Dapatkan info user
+    // 2. Ambil info user
     const userRes = await fetch('https://discord.com/api/users/@me', {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
     const user = await userRes.json();
     const userId = user.id;
 
-    // 3. Cek data member (pakai BOT)
-    const memberRes = await fetch(`https://discord.com/api/guilds/${SERVER_ID}/members/${userId}`, {
-      headers: { Authorization: `Bot ${BOT_TOKEN}` }
+    // 3. Ambil data member (dari bot yang di-host)
+    const memberResponse = await fetch('https://kriptoid-bot-hosted.vercel.app/api/get-member-roles', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId,
+        serverId: SERVER_ID
+      })
     });
 
-    const memberData = await memberRes.json();
+    const member = await memberResponse.json();
 
-    // LOGGING FULL untuk pengecekan
+    // DEBUG
     console.log('=== DISCORD MEMBER DATA ===');
     console.log('User ID:', userId);
-    console.log('Full Member Response:', JSON.stringify(memberData, null, 2));
+    console.log('Full Member Response:', JSON.stringify(member, null, 2));
 
-    const userRoles = memberData.roles || [];
+    const userRoles = member.roles || [];
 
     const hasAccess = userRoles.some(role => ALLOWED_ROLE_IDS.includes(role));
 
@@ -92,4 +96,3 @@ exports.handler = async function (event, context) {
     };
   }
 };
-
