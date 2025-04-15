@@ -1,13 +1,12 @@
 // Load environment variables
 require('dotenv').config();
 
-// Import fetch secara dinamis (karena node-fetch pakai ESM)
+// Dynamic import node-fetch (karena ESM)
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
   const code = new URLSearchParams(event.queryStringParameters).get('code');
 
-  // Konstanta konfigurasi
   const CLIENT_ID = '1359776558939639910';
   const CLIENT_SECRET = '2VI65jzTBio2ZV8xAIR47NlF1kZb7rlM';
   const REDIRECT_URI = 'https://kriptoid.netlify.app/.netlify/functions/auth-callback';
@@ -24,8 +23,8 @@ exports.handler = async function(event, context) {
   ];
 
   try {
-    // 1. Tukar code dengan access token
-    const tokenResponse = await fetch('https://discord.com/api/oauth2/token', {
+    // 1. Dapatkan access token
+    const tokenRes = await fetch('https://discord.com/api/oauth2/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -37,38 +36,35 @@ exports.handler = async function(event, context) {
       })
     });
 
-    const tokenData = await tokenResponse.json();
+    const tokenData = await tokenRes.json();
     const accessToken = tokenData.access_token;
 
     if (!accessToken) {
-      return {
-        statusCode: 401,
-        body: 'Access token tidak ditemukan'
-      };
+      return { statusCode: 401, body: "Access token tidak ditemukan" };
     }
 
-    // 2. Ambil info user (ID)
-    const userResponse = await fetch('https://discord.com/api/users/@me', {
+    // 2. Dapatkan info user
+    const userRes = await fetch('https://discord.com/api/users/@me', {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
-    const user = await userResponse.json();
+    const user = await userRes.json();
     const userId = user.id;
 
-    // 3. Ambil data member dari server (pakai bot)
-    const memberResponse = await fetch(`https://discord.com/api/guilds/${SERVER_ID}/members/${userId}`, {
+    // 3. Cek data member (pakai BOT)
+    const memberRes = await fetch(`https://discord.com/api/guilds/${SERVER_ID}/members/${userId}`, {
       headers: { Authorization: `Bot ${BOT_TOKEN}` }
     });
 
-    const member = await memberResponse.json();
-    const userRoleIds = member.roles || [];
+    const memberData = await memberRes.json();
 
-    // Logging untuk debug
+    // LOGGING FULL untuk pengecekan
+    console.log('=== DISCORD MEMBER DATA ===');
     console.log('User ID:', userId);
-    console.log('User Roles:', userRoleIds);
-    console.log('Allowed Roles:', ALLOWED_ROLE_IDS);
+    console.log('Full Member Response:', JSON.stringify(memberData, null, 2));
 
-    // 4. Cek apakah user punya role yang diizinkan
-    const hasAccess = userRoleIds.some(role => ALLOWED_ROLE_IDS.includes(role));
+    const userRoles = memberData.roles || [];
+
+    const hasAccess = userRoles.some(role => ALLOWED_ROLE_IDS.includes(role));
 
     if (hasAccess) {
       return {
@@ -84,15 +80,15 @@ exports.handler = async function(event, context) {
       return {
         statusCode: 403,
         headers: { 'Access-Control-Allow-Origin': '*' },
-        body: `Akses ditolak. Role kamu: ${JSON.stringify(userRoleIds)}`
+        body: `Akses ditolak. Role kamu: ${JSON.stringify(userRoles)}`
       };
     }
 
-  } catch (error) {
+  } catch (err) {
     return {
       statusCode: 500,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      body: `Terjadi kesalahan: ${error.message}`
+      body: `Terjadi kesalahan: ${err.message}`
     };
   }
 };
