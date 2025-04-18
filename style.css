@@ -1,3 +1,4 @@
+/* Body */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -24,16 +25,20 @@ h1 {
   top: 100px;
   left: 20px;
   width: 200px;
+  height: calc(100vh - 120px); /* Membatasi tinggi sidebar agar tidak terlalu tinggi */
   background-color: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
+  overflow-y: auto; /* Menambahkan scroll vertikal */
 }
 
+/* Sidebar heading */
 .sidebar h2 {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
+/* Sidebar list */
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -72,8 +77,9 @@ h1 {
   margin-left: 260px;
   padding: 20px 20px 100px 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
   gap: 20px;
+  justify-items: center;  /* Mengatur konten dalam grid agar rata tengah */
 }
 
 /* Modul Item */
@@ -82,17 +88,21 @@ h1 {
   border-radius: 10px;
   transition: 0.3s;
   text-align: center;
+  width: 100%; /* Pastikan modul mengisi 100% dari container */
+  box-sizing: border-box; /* Pastikan padding dan border dihitung dalam lebar elemen */
+  overflow: hidden; /* Pastikan gambar tidak keluar dari container */
 }
 
 .modul img {
   width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  height: auto; /* Menjaga rasio gambar */
+  object-fit: cover; /* Menghindari gambar terdistorsi */
 }
 
 .modul h3 {
   color: #fff;
   padding: 10px;
+  margin: 0;
 }
 
 .modul:hover {
@@ -101,10 +111,20 @@ h1 {
   background-color: #2c2c2c;
 }
 
+/* Menghilangkan garis bawah pada link */
+.modul a {
+  text-decoration: none; /* Hilangkan garis bawah */
+}
+
+/* Menambahkan gaya hover pada link */
+.modul a:hover {
+  text-decoration: none; /* Hilangkan garis bawah saat hover */
+}
+
 /* Tablet */
 @media (max-width: 768px) {
   .modul-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom pada tablet */
   }
 }
 
@@ -160,30 +180,3 @@ h1 {
   font-size: 14px;
   z-index: 10;
 }
-/* Tombol Login Discord */
-.login-container {
-  position: fixed;
-  top: 20px;
-  right: 100px;
-  z-index: 11;
-}
-
-.discord-login-button {
-  background-color: #5865F2;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.discord-login-button:hover {
-  background-color: #4752c4;
-}
-
-
-    

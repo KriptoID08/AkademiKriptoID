@@ -1,7 +1,7 @@
 // Array kategori utama
-const kategoriUtama = ['e book', 'live class', 'trading', 'research', 'crypto'];
+const kategoriUtama = ['E Book', 'Crypto Investing', 'Bitcoin', 'D`app', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security'];
 
-// Array gambar dan judul
+// Array gambar, judul, dan link YouTube untuk setiap modul
 const gambarModul = [
   'images/modul (1).jpg', 'images/modul (2).jpg', 'images/modul (3).jpg',
   'images/modul (4).jpg', 'images/modul (5).jpg', 'images/modul (6).jpg',
@@ -27,81 +27,102 @@ const gambarModul = [
   'images/modul (64).jpg', 'images/modul (65).jpg', 'images/modul (66).jpg',
   'images/modul (67).jpg', 'images/modul (68).jpg', 'images/modul (69).jpg',
   'images/modul (70).jpg', 'images/modul (71).jpg', 'images/modul (72).jpg',
+  'images/kriptoid.jpeg',
 ];
 
 const judulModul = [
-  'Cara Mencari Altcoin 10x', 'Live Class AI SuperCycle', 'The Art of Crypto Trading',
-  'Bitcoin Anonymity', 'Bitcoin Transaction in Depth', 'Blockchain Interoperabillity',
-  'Blockchain Oracles', 'Blockchain Trilemma', 'Live Class BTC to Alts Switching timing',
-  'Consemsus: Proof of ... and Security Premises', 'Cross-Chain Technology', 'Crypto Fundamentals',
-  'Crypto Security', 'Crypto Harmonic Trading', 'Crypto Investing',
-  'Crypto Investing Alpha', 'Crypto Investing Guides', 'Crypto Investing Strategy',
-  'Crypto Investing Tools', 'Crypto Money Psychology', 'Crypto Order Flow',
-  'Crypto Research', 'Crypto Self-Custody', 'Crypto Smart Money',
-  'Crypto Technical Indicators', 'Crypto Spot Trading', 'Crypto Trading Psychology',
-  'Crypto Wyckoff Trading', 'DEX Trading Tutorial', 'Digital Money And Double Spending',
-  'Ethereum: Programmable Money', 'Crypto Order Flow', 'E book Crypto Trading Guide',
-  'Kamus Pattern Crypto', 'Keys, Wallet, & How They Work', 'Kopi Darat Akademi Crypto',
-  'Live class Kuliah Crypto', 'Layer 2: Rollups', 'Margin Call Khusus Member',
-  'Crypto Market Outlook 2025', 'Crypto Harmonic Trading', 'Crypto Smart Money',
-  'E book Mastering Altcoins', 'Live Class Mastering Altcoin', 'Monero Anonymity',
-  'Narratives for 2024 Bull Run', 'Crypto Narrative Research', 'Token Unlock Trading Strategy',
-  'Live Class Octobull', 'E book Crypto Investing Principles', '2025 Crypto Regulation',
-  'Live class Riding The Crypto Super Mega Cycle', 'Sales Mastery', 'Crypto Investing Principles',
-  'E book Crypto Smart Money', 'Smart Contract Development', 'Smart Contract Security',
-  'Strategi Jadi Milliarder', 'Live ClassTrading Dapetin 100 Juta Pertama', 'E book Trading Psychology',
-  'Live Class 10x Your Portofolio This Bullrun', 'Cara Screening Altcoin dari 0', 'Security Issues',
-  '2030 The Great Reset', 'Smart Contract And Security Tokens', 'Gagal memuat modul',
-  'Types of Accounts', 'US Election Market Outlook', 'UTXO Model vs Account Model',
-  'What is a Smart Contract', 'Crypto Fibonacci Secret', 'Gagal memuat modul',
+  'Crypto Fibonacci Secret', 'Cara Mencari Altcoin Yang Minimal Akan Naik 10x', '10x Your Portofolio This Bullrun',
+  'Cara Screening Altcoin dari 0', 'Security Issues', 'Menggandakan Portfolio di AI Supercycle',
+  'The Art Of Crypto Trading', 'Bitcoin Anonymity', 'Bitcoin Transaction In Depth',
+  'Blockchain Interoperability', 'Blockchain Oracles', 'Blockchain Trilemma',
+  'BTC to Alts Switching Timing', 'Consensus: Proof of ... And Security Premises', 'Cross-Chain Technology',
+  'Cryptocurrency Fundamentals', 'Cryptocurrency Security', 'Crypto Harmonic Trading',
+  'Crypto Investing', 'Crypto Investing Alpha', 'Crypto Investing Guides',
+  'Crypto Investing Strategy', 'Crypto Investing Tools', 'Crypto Money Psychology',
+  'Crypto Order Flow', 'Crypto Research', 'Crypto Self-Custody',
+  'Crypto Smart Money', 'Crypto Technical Indicators', 'Crypto Spot Trading',
+  'Crypto Trading Psychology', 'Crypto Wyckoff Trading', 'DEX Trading Tutorial',
+  'Digital Money and Double Spending', 'Ethereum: Programmable Money', 'Crypto Order Flow',
+  'Crypto Trading Guide', 'Kamus Pattern Crypto', 'Keys, Wallets, & How They Work',
+  'Kopi Darat Akademi Crypto', 'Kuliah Crypto', 'Layer 2: Rollups',
+  'Margin Call Khusus Member', 'Crypto Market Outlook 2025', 'Crypto Harmonic Trading',
+  'Cryoto Smart Money', 'Mastering Altcoins', 'Mastering Altcoin',
+  'Monero: Anonymity', 'Narratives for 2024 Bull Run', 'Narrative Research',
+  'Token Unlock Trading Strategy', 'Octobull', 'Crypto Investing Principles',
+  '2025 Crypto Regulation', 'Riding The Crypto Super Mega Cycle', 'Sales Mastery',
+  'Crypto Investing Principles', 'Crypto Smart Money', 'Smart Contract Development',
+  'Smart Contract Security', 'Strategi Jadi Milliarder Dari Crypto', 'Strategi Trading Crypto Untk Dapetin 100 Juta Pertama dari 0',
+  'Crypto Trading Psychology', '2030 The Great Reset', 'Tokens',
+  'Gagal memuat modul', 'Types of Accounts', 'US Election Market Outlook',
+  'UTXO Model vs Account Model', 'What is a Smart Contract', 'Gagal memuat modul',
+  'Monero Anomynity'
 ];
 
-// Ambil container
+// Menentukan kategori manual untuk setiap modul
+const kategoriModul = [
+  'Crypto Trading', 'Live Class', 'Live Class', 'Crypto Trading', 'Smart Contract And Security', 'Live Class',
+  'Live Class', 'Bitcoin', 'Blockchain Technology', 'Blockchain Technology', 'DApp', 'Blockchain Fundamental',
+  'Live Class', 'Blockchain Fundamental', 'DApp', 'Blockchain Technology', 'Blockchain Technology', 'Crypto Trading',
+  'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Trading',
+  'Crypto Trading', 'Blockchain Technology', 'Crypto Investing', 'Crypto Trading', 'Crypto Trading', 'Crypto Trading',
+  'Live Class', 'Crypto Trading', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Live Class',
+  'E Book', 'Crypto Trading', 'Blockchain Fundamental', 'Live Class', 'Live Class', 'Smart Contract And Security',
+  'Live Class', 'Live Class', 'Live Class', 'Live Class', 'E Book', 'Live Class', 'Blockchain Technology',
+  'Live Class', 'Crypto Trading', 'Crypto Trading', 'Live Class', 'E Book', 'Live Class',
+  'Live Class', 'Live Class', 'Crypto Investing', 'E Book', 'Blockchain Technology', 'Blockchain Technology',
+  'Live Class', 'Crypto Trading', 'E Book', 'Live Class', 'Smart Contract And Security', 'Live Class',
+  'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Live Class', 'Blockchain Technology',
+];
+
+// Array link YouTube untuk setiap modul
+const youtubeLinks = [
+  'https://www.youtube.com/watch?v=xxxxxxxxxxx', 
+  'https://www.youtube.com/watch?v=xxxxxxxxxxx', 
+  'https://www.youtube.com/watch?v=xxxxxxxxxxx', 
+  // Tambahkan link YouTube sesuai indeks modul
+];
+
+// Ambil container untuk modul
 const modulContainer = document.getElementById('modul-container');
-const row1 = document.getElementById('row-1');
-const row2 = document.getElementById('row-2');
-const row3 = document.getElementById('row-3');
 
-// Generate modul
-gambarModul.forEach((gambar, index) => {
-  const divModul = document.createElement('div');
-  divModul.classList.add('modul');
+// Fungsi untuk menghasilkan modul
+function generateModul() {
+  // Clear modul yang ada sebelumnya
+  modulContainer.innerHTML = '';
 
-  const judul = judulModul[index] || `Modul Kripto ${index + 1}`;
-  const lowerJudul = judul.toLowerCase();
-  const kategori = kategoriUtama.find(k => lowerJudul.includes(k)) || 'other';
+  gambarModul.forEach((gambar, index) => {
+    const divModul = document.createElement('div');
+    divModul.classList.add('modul');
 
-  divModul.setAttribute('data-title', lowerJudul);
-  divModul.setAttribute('data-kategori', kategori);
+    const judul = judulModul[index] || `Modul Kripto ${index + 1}`;
+    const kategori = kategoriModul[index];  // Menggunakan kategori manual yang ditentukan
 
-  const img = document.createElement('img');
-  img.src = gambar;
-  img.alt = judul;
-  img.style.width = '100%';
+    divModul.setAttribute('data-title', judul.toLowerCase());
+    divModul.setAttribute('data-kategori', kategori);
 
-  const h3 = document.createElement('h3');
-  h3.innerText = judul;
+    const img = document.createElement('img');
+    img.src = gambar;
+    img.alt = judul;
 
-  divModul.appendChild(img);
-  divModul.appendChild(h3);
+    const h3 = document.createElement('h3');
+    h3.innerText = judul;
 
-  // Desktop
-  modulContainer.appendChild(divModul);
+    // Membungkus gambar dan judul dengan tag <a> untuk link YouTube
+    const link = document.createElement('a');
+    link.href = youtubeLinks[index];  // Link YouTube sesuai indeks
+    link.target = "_blank";  // Membuka link di tab baru
 
-  // Mobile rows (3 baris horizontal scroll)
-  const cloned = divModul.cloneNode(true);
-  if (index % 3 === 0) {
-    row1.appendChild(cloned);
-  } else if (index % 3 === 1) {
-    row2.appendChild(cloned);
-  } else {
-    row3.appendChild(cloned);
-  }
-});
+    // Menambahkan gambar dan judul ke dalam link
+    link.appendChild(img);
+    link.appendChild(h3);
 
-// Search & Filter
-const searchInput = document.getElementById('search-input');
-searchInput.addEventListener('input', applyFilter);
+    divModul.appendChild(link);
+
+    modulContainer.appendChild(divModul);
+  });
+}
+
+// Fungsi untuk filter berdasarkan kategori yang dipilih
 document.querySelectorAll('#kategori-filter li').forEach(li => {
   li.addEventListener('click', function () {
     document.querySelectorAll('#kategori-filter li').forEach(el => el.classList.remove('active'));
@@ -111,16 +132,13 @@ document.querySelectorAll('#kategori-filter li').forEach(li => {
 });
 
 function applyFilter() {
-  const keyword = searchInput.value.toLowerCase();
   const kategoriAktif = document.querySelector('#kategori-filter .active')?.getAttribute('data-kategori') || 'all';
 
   document.querySelectorAll('.modul').forEach(modul => {
-    const title = modul.getAttribute('data-title');
     const kategoriModul = modul.getAttribute('data-kategori');
-
-    const cocokSearch = title.includes(keyword);
-    const cocokKategori = kategoriAktif === 'all' || kategoriModul === kategoriAktif;
-
-    modul.style.display = (cocokSearch && cocokKategori) ? 'block' : 'none';
+    modul.style.display = (kategoriAktif === 'all' || kategoriModul === kategoriAktif) ? 'block' : 'none';
   });
 }
+
+// Inisialisasi tampilan modul
+generateModul();
