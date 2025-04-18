@@ -26,7 +26,7 @@ const gambarModul = [
   'images/modul (61).jpg', 'images/modul (62).jpg', 'images/modul (63).jpg',
   'images/modul (64).jpg', 'images/modul (65).jpg', 'images/modul (66).jpg',
   'images/modul (67).jpg', 'images/modul (68).jpg', 'images/modul (69).jpg',
-  'images/modul (70).jpg', 'images/modul (71).jpg', 'images/modul (72).jpg',
+  'images/modul (70).jpg', 'images/modul (71).jpg', 'images/ibuk.jpeg',
   'images/kriptoid.jpeg',
 ];
 
@@ -54,7 +54,7 @@ const judulModul = [
   'Smart Contract Security', 'Strategi Jadi Milliarder Dari Crypto', 'Strategi Trading Crypto Untk Dapetin 100 Juta Pertama dari 0',
   'Crypto Trading Psychology', '2030 The Great Reset', 'Tokens',
   'Gagal memuat modul', 'Types of Accounts', 'US Election Market Outlook',
-  'UTXO Model vs Account Model', 'What is a Smart Contract', 'Gagal memuat modul',
+  'UTXO Model vs Account Model', 'What is a Smart Contract', '100+ E-Book Tentang Investasi',
   'Monero Anomynity'
 ];
 
@@ -71,7 +71,7 @@ const kategoriModul = [
   'Live Class', 'Crypto Trading', 'Crypto Trading', 'Live Class', 'E Book', 'Live Class',
   'Live Class', 'Live Class', 'Crypto Investing', 'E Book', 'Blockchain Technology', 'Blockchain Technology',
   'Live Class', 'Crypto Trading', 'E Book', 'Live Class', 'Smart Contract And Security', 'Live Class',
-  'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Smart Contract And Security', 'Blockchain Technology',
+  'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Smart Contract And Security', 'E Book','Blockchain Technology',
 ];
 
 // Array link YouTube untuk setiap modul
