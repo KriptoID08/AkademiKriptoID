@@ -131,6 +131,24 @@ document.querySelectorAll('#kategori-filter li').forEach(li => {
   });
 });
 
+// Fungsi untuk pencarian
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', applySearchFilter);
+
+function applySearchFilter() {
+  const keyword = searchInput.value.toLowerCase();
+
+  // Menyaring modul berdasarkan pencarian
+  document.querySelectorAll('.modul').forEach(modul => {
+    const title = modul.querySelector('h3').innerText.toLowerCase();
+    if (title.includes(keyword)) {
+      modul.style.display = 'block'; // Menampilkan modul yang cocok dengan pencarian
+    } else {
+      modul.style.display = 'none'; // Menyembunyikan modul yang tidak cocok
+    }
+  });
+}
+
 function applyFilter() {
   const kategoriAktif = document.querySelector('#kategori-filter .active')?.getAttribute('data-kategori') || 'all';
 
