@@ -25,11 +25,11 @@ h1 {
   top: 100px;
   left: 20px;
   width: 200px;
-  height: calc(100vh - 120px); /* Membatasi tinggi sidebar agar tidak terlalu tinggi */
+  height: calc(100vh - 120px);
   background-color: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
-  overflow-y: auto; /* Menambahkan scroll vertikal */
+  overflow-y: auto;
 }
 
 /* Sidebar heading */
@@ -77,9 +77,9 @@ h1 {
   margin-left: 260px;
   padding: 20px 20px 100px 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  justify-items: center;  /* Mengatur konten dalam grid agar rata tengah */
+  justify-items: center;
 }
 
 /* Modul Item */
@@ -88,15 +88,15 @@ h1 {
   border-radius: 10px;
   transition: 0.3s;
   text-align: center;
-  width: 100%; /* Pastikan modul mengisi 100% dari container */
-  box-sizing: border-box; /* Pastikan padding dan border dihitung dalam lebar elemen */
-  overflow: hidden; /* Pastikan gambar tidak keluar dari container */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .modul img {
   width: 100%;
-  height: auto; /* Menjaga rasio gambar */
-  object-fit: cover; /* Menghindari gambar terdistorsi */
+  height: auto;
+  object-fit: cover;
 }
 
 .modul h3 {
@@ -111,37 +111,22 @@ h1 {
   background-color: #2c2c2c;
 }
 
-/* Menghilangkan garis bawah pada link */
 .modul a {
-  text-decoration: none; /* Hilangkan garis bawah */
+  text-decoration: none;
 }
 
-/* Menambahkan gaya hover pada link */
 .modul a:hover {
-  text-decoration: none; /* Hilangkan garis bawah saat hover */
+  text-decoration: none;
 }
 
-/* Tablet */
+/* Mobile View */
 @media (max-width: 768px) {
   .modul-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom pada tablet */
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .modul-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .modul {
-    flex: 0 0 calc(100vw / 3 - 30px);
-    scroll-snap-align: start;
+  .sidebar {
+    display: none; /* Menghilangkan sidebar di mobile */
   }
 
   #search-input {
@@ -150,10 +135,34 @@ h1 {
     margin-right: auto;
   }
 
-  .sidebar {
-    position: static;
-    width: auto;
-    margin: 20px;
+  /* Modul Container untuk Mobile */
+  .modul-container {
+    margin-left: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .modul {
+    flex: 0 0 calc(100% / 3 - 16px); /* Modul lebih kecil di mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .modul-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .modul {
+    flex: 0 0 100%; /* Modul full-width di mobile */
+  }
+
+  /* Menghilangkan kategori */
+  #kategori-filter {
+    display: none;
   }
 }
 
