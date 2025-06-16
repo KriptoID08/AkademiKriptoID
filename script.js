@@ -27,7 +27,8 @@ const gambarModul = [
   'images/modul (64).jpg', 'images/modul (65).jpg', 'images/modul (66).jpg',
   'images/modul (67).jpg', 'images/modul (68).jpg', 'images/modul (69).jpg',
   'images/modul (70).jpg', 'images/modul (71).jpg', 'images/ibuk.jpeg',
-  'images/kriptoid.jpeg',
+  'images/kriptoid.jpeg','images/entry.jpg','images/blockchain.jpg',
+  'images/crypto-exit.jpeg','images/management.jpg',
 ];
 
 const judulModul = [
@@ -55,7 +56,8 @@ const judulModul = [
   'Crypto Trading Psychology', '2030 The Great Reset', 'Tokens',
   'Gagal memuat modul', 'Types of Accounts', 'US Election Market Outlook',
   'UTXO Model vs Account Model', 'What is a Smart Contract', '100+ E-Book Tentang Investasi',
-  'Monero Anomynity'
+  'Monero Anomynity','Crypto Entry Mastery','Blockchain And AI',
+  'Crypto Exit Strategy','Crypto Portofolio Management',
 ];
 
 // Menentukan kategori manual untuk setiap modul
@@ -71,7 +73,8 @@ const kategoriModul = [
   'Live Class', 'Crypto Trading', 'Crypto Trading', 'Live Class', 'E Book', 'Live Class',
   'Live Class', 'Live Class', 'Crypto Investing', 'E Book', 'Blockchain Technology', 'Blockchain Technology',
   'Live Class', 'Crypto Trading', 'E Book', 'Live Class', 'Smart Contract And Security', 'Live Class',
-  'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Smart Contract And Security', 'E Book','Blockchain Technology',
+  'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Smart Contract And Security', 'E Book','Blockchain Technology','Crypto Trading',
+  'Blockchain Technology','Crypto Trading','Crypto Investing',
 ];
 
 // Array link YouTube untuk setiap modul
@@ -149,6 +152,10 @@ const youtubeLinks = [
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkQX_hJaqiidqKyQ89GbbuCb', 
   'https://drive.google.com/drive/folders/1hcVU_iOEG_-v5SwHAJulLTPYXdpRE3pt', 
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkQIJ4LzQgSxQEpR6xNMPUt5',  
+  'https://drive.google.com/drive/folders/1MnhnpJ5W4TYV98zSranF8Hb5JDv-HTad',
+  'https://drive.google.com/drive/folders/1aEK8eJDlMh3IuH4ryhQ8MYqXpMvyB67A',
+  'https://drive.google.com/drive/folders/19nYjtrdsj6RWuFxI7XZtdAAndViQ7Z3c',
+  'https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-',
 ];
 
 // Ambil container untuk modul
