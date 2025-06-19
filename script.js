@@ -63,8 +63,8 @@ const judulModul = [
 // Menentukan kategori manual untuk setiap modul
 const kategoriModul = [
   'Crypto Trading', 'Live Class', 'Live Class', 'Crypto Trading', 'Smart Contract And Security', 'Live Class',
-  'Live Class', 'Bitcoin', 'Blockchain Technology', 'Blockchain Technology', 'DApp', 'Blockchain Fundamental',
-  'Live Class', 'Blockchain Fundamental', 'DApp', 'Blockchain Technology', 'Blockchain Technology', 'Crypto Trading',
+  'Live Class', 'Bitcoin', 'Blockchain Technology', 'Blockchain Technology', 'D App', 'Blockchain Fundamental',
+  'Live Class', 'Blockchain Fundamental', 'D App', 'Blockchain Technology', 'Blockchain Technology', 'Crypto Trading',
   'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Trading',
   'Crypto Trading', 'Blockchain Technology', 'Crypto Investing', 'Crypto Trading', 'Crypto Trading', 'Crypto Trading',
   'Live Class', 'Crypto Trading', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Live Class',
