@@ -1,5 +1,5 @@
 // Array kategori utama
-const kategoriUtama = ['E Book', 'Crypto Investing', 'Bitcoin', 'D`app', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security'];
+const kategoriUtama = ['E Book', 'Crypto Investing', 'Bitcoin', 'D App', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security'];
 
 // Array gambar, judul, dan link YouTube untuk setiap modul
 const gambarModul = [
@@ -155,84 +155,69 @@ const youtubeLinks = [
   'https://drive.google.com/drive/folders/1MnhnpJ5W4TYV98zSranF8Hb5JDv-HTad',
   'https://drive.google.com/drive/folders/1aEK8eJDlMh3IuH4ryhQ8MYqXpMvyB67A',
   'https://drive.google.com/drive/folders/19nYjtrdsj6RWuFxI7XZtdAAndViQ7Z3c',
-  'https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-',
+  'https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-'
 ];
 
-// Ambil container untuk modul
 const modulContainer = document.getElementById('modul-container');
 
-// Fungsi untuk menghasilkan modul
-function generateModul() {
-  // Clear modul yang ada sebelumnya
+function generateModul(filteredKeyword = '') {
   modulContainer.innerHTML = '';
 
-  gambarModul.forEach((gambar, index) => {
-    const divModul = document.createElement('div');
-    divModul.classList.add('modul');
+  kategoriUtama.forEach(kategori => {
+    const row = document.createElement('div');
+    row.classList.add('kategori-row');
 
-    const judul = judulModul[index] || `Modul Kripto ${index + 1}`;
-    const kategori = kategoriModul[index];  // Menggunakan kategori manual yang ditentukan
+    let found = false;
 
-    divModul.setAttribute('data-title', judul.toLowerCase());
-    divModul.setAttribute('data-kategori', kategori);
+    for (let i = 0; i < judulModul.length; i++) {
+      if (
+        kategoriModul[i] === kategori &&
+        judulModul[i].toLowerCase().includes(filteredKeyword)
+      ) {
+        const modul = document.createElement('div');
+        modul.classList.add('modul');
 
-    const img = document.createElement('img');
-    img.src = gambar;
-    img.alt = judul;
+        const link = document.createElement('a');
+        link.href = youtubeLinks[i] || '#';
+        link.target = '_blank';
 
-    const h3 = document.createElement('h3');
-    h3.innerText = judul;
+        const img = document.createElement('img');
+        img.src = gambarModul[i];
+        img.alt = judulModul[i];
 
-    // Membungkus gambar dan judul dengan tag <a> untuk link YouTube
-    const link = document.createElement('a');
-    link.href = youtubeLinks[index];  // Link YouTube sesuai indeks
-    link.target = "_blank";  // Membuka link di tab baru
+        const h3 = document.createElement('h3');
+        h3.innerText = judulModul[i];
 
-    // Menambahkan gambar dan judul ke dalam link
-    link.appendChild(img);
-    link.appendChild(h3);
+        link.appendChild(img);
+        link.appendChild(h3);
+        modul.appendChild(link);
+        row.appendChild(modul);
 
-    divModul.appendChild(link);
+        found = true;
+      }
+    }
 
-    modulContainer.appendChild(divModul);
-  });
-}
+    if (found) {
+      const section = document.createElement('div');
+      section.classList.add('kategori-section');
 
-// Fungsi untuk filter berdasarkan kategori yang dipilih
-document.querySelectorAll('#kategori-filter li').forEach(li => {
-  li.addEventListener('click', function () {
-    document.querySelectorAll('#kategori-filter li').forEach(el => el.classList.remove('active'));
-    this.classList.add('active');
-    applyFilter();
-  });
-});
+      const title = document.createElement('h2');
+      title.innerText = kategori;
+      title.classList.add('kategori-title');
 
-// Fungsi untuk pencarian
-const searchInput = document.getElementById('search-input');
-searchInput.addEventListener('input', applySearchFilter);
-
-function applySearchFilter() {
-  const keyword = searchInput.value.toLowerCase();
-
-  // Menyaring modul berdasarkan pencarian
-  document.querySelectorAll('.modul').forEach(modul => {
-    const title = modul.querySelector('h3').innerText.toLowerCase();
-    if (title.includes(keyword)) {
-      modul.style.display = 'block'; // Menampilkan modul yang cocok dengan pencarian
-    } else {
-      modul.style.display = 'none'; // Menyembunyikan modul yang tidak cocok
+      section.appendChild(title);
+      section.appendChild(row);
+      modulContainer.appendChild(section);
     }
   });
 }
 
-function applyFilter() {
-  const kategoriAktif = document.querySelector('#kategori-filter .active')?.getAttribute('data-kategori') || 'all';
+// ========== EVENT SEARCH ==========
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', () => {
+  const keyword = searchInput.value.trim().toLowerCase();
+  generateModul(keyword);
+});
 
-  document.querySelectorAll('.modul').forEach(modul => {
-    const kategoriModul = modul.getAttribute('data-kategori');
-    modul.style.display = (kategoriAktif === 'all' || kategoriModul === kategoriAktif) ? 'block' : 'none';
-  });
-}
-
-// Inisialisasi tampilan modul
+// ========== INISIALISASI ==========
 generateModul();

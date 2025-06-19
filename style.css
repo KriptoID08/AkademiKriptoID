@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Judul */
+/* Judul utama */
 h1 {
   color: #fcf6fd;
   margin: 20px;
@@ -17,106 +17,6 @@ h1 {
   top: 10px;
   left: 20px;
   z-index: 2;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  width: 200px;
-  height: calc(100vh - 120px);
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  overflow-y: auto;
-}
-
-/* Sidebar heading */
-.sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-/* Sidebar list */
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  padding: 8px 12px;
-  background-color: #2c2c2c;
-  margin-bottom: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-  text-align: center;
-}
-
-.sidebar li:hover,
-.sidebar li.active {
-  background-color: #9c27b0;
-}
-
-/* Search Bar */
-#search-input {
-  width: 60%;
-  padding: 10px;
-  font-size: 16px;
-  margin: 140px auto 20px 320px;
-  display: block;
-  border-radius: 10px;
-  border: none;
-  background-color: #2a2a2a;
-  color: #ffffff;
-}
-
-/* Modul Container */
-.modul-container {
-  margin-left: 260px;
-  padding: 20px 20px 100px 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
-  gap: 20px;
-  justify-items: center;
-}
-
-/* Modul Item */
-.modul {
-  background-color: #1c1c1c;
-  border-radius: 10px;
-  transition: 0.3s;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.modul img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.modul h3 {
-  color: #fff;
-  padding: 10px;
-  margin: 0;
-}
-
-.modul:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(156, 39, 176, 0.5);
-  background-color: #2c2c2c;
-}
-
-.modul a {
-  text-decoration: none;
-}
-
-.modul a:hover {
-  text-decoration: none;
 }
 
 /* Logo kanan atas */
@@ -143,51 +43,143 @@ h1 {
   z-index: 10;
 }
 
-/* Mobile View */
-@media (max-width: 768px) {
-  /* Hide sidebar on mobile */
-  .sidebar {
-    display: none;
-  }
+/* Search Bar */
+#search-input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 140px auto 20px auto;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
 
-  /* Search input full width */
+/* Modul Container */
+.modul-container {
+  margin-left: 0;
+  padding: 20px 20px 100px 20px;
+}
+
+/* Kategori Section */
+.kategori-section {
+  margin-bottom: 40px;
+}
+
+.kategori-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  color: #f0f0f0;
+}
+
+/* Baris Modul */
+.kategori-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+.kategori-row::-webkit-scrollbar {
+  height: 6px;
+}
+.kategori-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Modul Card */
+.modul {
+  width: 100%;
+  max-width: 220px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #1c1c1c;
+  transition: 0.3s;
+}
+
+.modul img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.modul h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 8px 0;
+  padding: 0 10px 10px 10px;
+}
+
+.modul:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(156, 39, 176, 0.5);
+  background-color: #2c2c2c;
+}
+
+.modul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
   #search-input {
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 120px auto 20px auto;
   }
 
-  /* Modul container: 3 rows, horizontal scroll */
   .modul-container {
-    margin-left: 0;
-    padding: 10px;
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    max-width: 100vw;
+    padding: 120px 10px 50px 10px;
   }
 
-  /* Modul fixed width for horizontal scroll */
+  .kategori-title {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
   .modul {
-    width: 200px;
+    min-width: 160px;
+    max-width: 160px;
   }
 
-  /* Hide kategori filter */
-  #kategori-filter {
-    display: none;
+  .modul img {
+    height: 110px;
+  }
+
+  .modul h3 {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Maintain 3 rows with slightly smaller modules */
-  .modul-container {
-    grid-template-rows: repeat(3, 1fr);
+  .modul {
+    min-width: 140px;
+    max-width: 140px;
   }
 
-  .modul {
-    width: 160px;
+  .modul img {
+    height: 100px;
+  }
+
+  .modul h3 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modul h3 {
+    display: none;
   }
 }
