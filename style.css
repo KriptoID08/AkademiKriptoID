@@ -29,20 +29,6 @@ h1 {
   z-index: 10;
 }
 
-/* Peringatan tengah atas */
-.peringatan-tengah {
-  position: fixed;
-  top: 20px;
-  left: 55%;
-  transform: translateX(-50%);
-  background-color: #9c27b0;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  z-index: 10;
-}
-
 /* Search Bar */
 #search-input {
   width: 60%;
@@ -58,7 +44,6 @@ h1 {
 
 /* Modul Container */
 .modul-container {
-  margin-left: 0;
   padding: 20px 20px 100px 20px;
 }
 
@@ -133,6 +118,40 @@ h1 {
   color: inherit;
 }
 
+/* Halaman Riset & Profil disembunyikan dulu */
+#halaman-riset,
+#halaman-profil {
+  display: none;
+  padding: 120px 20px 80px 20px;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #121212;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #333;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bottom-nav button:hover {
+  color: #9c27b0;
+}
+
 /* Responsive Mobile */
 @media (max-width: 768px) {
   #search-input {
@@ -141,7 +160,7 @@ h1 {
   }
 
   .modul-container {
-    padding: 120px 10px 50px 10px;
+    padding: 120px 10px 80px 10px;
   }
 
   .kategori-title {
@@ -150,8 +169,8 @@ h1 {
   }
 
   .modul {
-    min-width: 160px;
-    max-width: 160px;
+    min-width: 150px;
+    max-width: 150px;
   }
 
   .modul img {
@@ -175,11 +194,5 @@ h1 {
 
   .modul h3 {
     font-size: 13px;
-  }
-}
-
-@media (max-width: 768px) {
-  .modul h3 {
-    display: none;
   }
 }

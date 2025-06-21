@@ -1,5 +1,5 @@
 // Array kategori utama
-const kategoriUtama = ['E Book', 'Crypto Investing', 'Bitcoin', 'D App', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security'];
+const kategoriUtama = ['Crypto Investing','D App', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security', 'DePIN' , 'Bitcoin' , 'E Book'];
 
 // Array gambar, judul, dan link YouTube untuk setiap modul
 const gambarModul = [
@@ -25,10 +25,12 @@ const gambarModul = [
   'images/modul (58).jpg', 'images/modul (59).jpg', 'images/modul (60).jpg',
   'images/modul (61).jpg', 'images/modul (62).jpg', 'images/modul (63).jpg',
   'images/modul (64).jpg', 'images/modul (65).jpg', 'images/modul (66).jpg',
-  'images/modul (67).jpg', 'images/modul (68).jpg', 'images/modul (69).jpg',
+  'images/grandlaunch.png', 'images/modul (68).jpg', 'images/modul (69).jpg',
   'images/modul (70).jpg', 'images/modul (71).jpg', 'images/ibuk.jpeg',
   'images/kriptoid.jpeg','images/entry.jpg','images/blockchain.jpg',
-  'images/crypto-exit.jpeg','images/management.jpg',
+  'images/crypto-exit.jpeg','images/management.jpg','images/cbdc.jpg',
+  'images/bigcrypto.png','images/defi-dex.jpg',
+
 ];
 
 const judulModul = [
@@ -54,10 +56,11 @@ const judulModul = [
   'Crypto Investing Principles', 'Crypto Smart Money', 'Smart Contract Development',
   'Smart Contract Security', 'Strategi Jadi Milliarder Dari Crypto', 'Strategi Trading Crypto Untk Dapetin 100 Juta Pertama dari 0',
   'Crypto Trading Psychology', '2030 The Great Reset', 'Tokens',
-  'Gagal memuat modul', 'Types of Accounts', 'US Election Market Outlook',
+  'Akademi Crypto Grand Launching', 'Types of Accounts', 'US Election Market Outlook',
   'UTXO Model vs Account Model', 'What is a Smart Contract', '100+ E-Book Tentang Investasi',
   'Monero Anomynity','Crypto Entry Mastery','Blockchain And AI',
-  'Crypto Exit Strategy','Crypto Portofolio Management',
+  'Crypto Exit Strategy','Crypto Portofolio Management','Central Bank Digital Currency',
+  'Big Crypto Thesis','DeFi: DEX',
 ];
 
 // Menentukan kategori manual untuk setiap modul
@@ -74,13 +77,13 @@ const kategoriModul = [
   'Live Class', 'Live Class', 'Crypto Investing', 'E Book', 'Blockchain Technology', 'Blockchain Technology',
   'Live Class', 'Crypto Trading', 'E Book', 'Live Class', 'Smart Contract And Security', 'Live Class',
   'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Smart Contract And Security', 'E Book','Blockchain Technology','Crypto Trading',
-  'Blockchain Technology','Crypto Trading','Crypto Investing',
+  'Blockchain Technology','Crypto Trading','Crypto Investing','DePIN','Live Class','D App',
 ];
 
 // Array link YouTube untuk setiap modul
 const youtubeLinks = [
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkR0YG-DjruO4JCXRqX49smy', 
-  '', 
+  'https://www.youtube.com/watch?v=zFz6tVbQaD0&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=8', 
   'https://www.youtube.com/watch?v=xLHo4Bsc6GI',
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkQXePTmW6W_diad21w51z3Y', 
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkQe6TAVs9JSZA8MUablgI53', 
@@ -145,7 +148,7 @@ const youtubeLinks = [
   'https://drive.google.com/file/d/1ztF-QGPQdWPFw1jXVrgp0c8u3GN4v0hG/view?usp=sharing', 
   'https://www.youtube.com/watch?v=Zpp4ja9DOFo', 
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkQWYCkR7wKpE1Dd48V2DHff', 
-  'https://youtu.be/dQw4w9WgXcQ', 
+  'https://www.youtube.com/watch?v=Vk2umj18kCw&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=1', 
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ2Wn9wTM-2KDfnIisgNfIo', 
   'https://www.youtube.com/watch?v=lR9sISGi-Mk', 
   'https://www.youtube.com/playlist?list=PL1hlgGm52pkS-sRyPe6KWPYsuzzdRI-wf', 
@@ -155,7 +158,13 @@ const youtubeLinks = [
   'https://drive.google.com/drive/folders/1MnhnpJ5W4TYV98zSranF8Hb5JDv-HTad',
   'https://drive.google.com/drive/folders/1aEK8eJDlMh3IuH4ryhQ8MYqXpMvyB67A',
   'https://drive.google.com/drive/folders/19nYjtrdsj6RWuFxI7XZtdAAndViQ7Z3c',
-  'https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-'
+  'https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-',
+  'https://drive.google.com/file/d/1yfZNuAZUXSr6T5Yq-Hpqwc6jQnvueurQ/edit',
+  'https://www.youtube.com/watch?v=nAvj4rgkhFU&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=2',
+  'https://drive.google.com/file/d/1Zioo6D3RmEZ1aE_Qar19zv4SpegmbEJw/view?usp=drive_link'
+
+
+
 ];
 
 const modulContainer = document.getElementById('modul-container');
