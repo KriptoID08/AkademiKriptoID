@@ -176,12 +176,6 @@ const modulList = [
     gambar: 'images/modul (29).jpg',
     links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTkQfZFKlN7LTuErnCDxGSk']
   },
-    {
-    judul: 'Crypto Technical Indicators',
-    kategori: 'Crypto Trading',
-    gambar: 'images/modul (29).jpg',
-    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTkQfZFKlN7LTuErnCDxGSk']
-  },
   {
     judul: 'Crypto Spot Trading',
     kategori: 'Crypto Trading',
@@ -483,11 +477,11 @@ const modulList = [
   links: ['https://www.youtube.com/watch?v=nAvj4rgkhFU&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=2']
 },
 {
-  judul: 'DeFi: DEX',
+  judul: 'DeFi: Lending & Borrowing',
   kategori: 'D App',
-  gambar: 'images/defi-dex.jpg',
+  gambar: 'images/defi-landing.jpg',
   links: [
-    { url: 'https://drive.google.com/file/d/1Zioo6D3RmEZ1aE_Qar19zv4SpegmbEJw/view?usp=drive_link', label: 'DeFi Lending' },
+    { url: 'https://drive.google.com/file/d/1Aa9J_bpByn-isWkv8uvZOIH7cgvEvmfH', label: 'DeFi Lending' },
     { url: 'https://drive.google.com/file/d/1PtJSyYham4Nc48bMBuepUwyLni5Nepsu', label: 'Flash Loan' }
   ]
 },
@@ -506,7 +500,40 @@ const modulList = [
     { url: 'https://drive.google.com/file/d/1F5730m-ytq1H83he2NFaOrHqJwoi_c8N', label: 'Social Engineering' }
   ]
 },
-
+{
+  judul: 'Stablecoins',
+  kategori: 'D App',
+  gambar: 'images/stablecoins.jpg',
+  links: ['https://drive.google.com/file/d/1_dQuIcnGJuEAFwZPqXQWxnZpYKn6uyLB']
+},
+{
+  judul: 'DeFi: DEX',
+  kategori: 'D App',
+  gambar: 'images/defi-dex.jpg',
+  links: ['https://drive.google.com/file/d/1Zioo6D3RmEZ1aE_Qar19zv4SpegmbEJw/view?usp=drive_link']
+},
+{
+  judul: 'Technical Research',
+  kategori: 'Crypto Trading',
+  gambar: 'images/tecr.jpg',
+  links: [
+    { url: 'https://drive.google.com/file/d/116nRowogvCEVvix55chOHLtMeExdMG2M/view?usp=drive_link', label: 'Cara Melakukan Analisis Trend' },
+    { url: 'https://drive.google.com/file/d/10j4T4v9afmQfWDC6vxfzraRhlGeJ5Ebl/view?usp=drive_link', label: 'Cara Melakukan Analisis Area' },
+    { url: 'https://drive.google.com/file/d/11VjMj8rKb6EpDmgvieABTYTHpb0kyI7M/view?usp=drive_link', label: 'Cara Melakukan Analisis Pola' },
+    { url: 'https://drive.google.com/file/d/11w3MkJfTfSWdGzi-WlaTNGHtFgdELbgs/view?usp=drive_link', label: 'Cara Melakukan Analisis Pemicu' },
+    { url: 'https://drive.google.com/file/d/12KyxpNcEloF5_-K00RuWgAKM56SNxcL2/view?usp=drive_link', label: 'Cara Melakukan Entry Analysis' },
+  ]
+},
+{
+  judul: 'Fundamental Research',
+  kategori: 'Crypto Trading',
+  gambar: 'images/fundr.jpg',
+  links: [
+    { url: 'https://drive.google.com/file/d/1-Tf1aqm5d-LX_wRlDS39ZK6KTSviImPE/view?usp=drive_link', label: 'Intro to Fundamental Research' },
+    { url: 'https://drive.google.com/file/d/1-Z6UEot6N3BIcsdUWi9RLUBnP65f9T4W/view?usp=drive_link', label: 'Faktor yang Berperan Dalam Fundamental Research' },
+    { url: 'https://drive.google.com/file/d/1-gxmmFb5LRSEoyIjiTSqKlAebhYJ_X0y/view?usp=drive_link', label: 'Mendalami Tokonemics Project' },
+  ]
+},
 
 
 
