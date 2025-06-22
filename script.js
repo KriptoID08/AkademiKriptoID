@@ -1,167 +1,512 @@
 // Array kategori utama
-const kategoriUtama = ['Crypto Investing','D App', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security', 'DePIN' , 'Bitcoin' , 'E Book'];
+const kategoriUtama = ['Crypto Investing','D App', 'Live Class', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Smart Contract And Security', 'Web3 Safety' , 'DePIN' , 'Bitcoin' , 'E Book'];
 
-// Array gambar, judul, dan link YouTube untuk setiap modul
-const gambarModul = [
-  'images/modul (1).jpg', 'images/modul (2).jpg', 'images/modul (3).jpg',
-  'images/modul (4).jpg', 'images/modul (5).jpg', 'images/modul (6).jpg',
-  'images/modul (7).jpg', 'images/modul (8).jpg', 'images/modul (9).jpg',
-  'images/modul (10).jpg', 'images/modul (11).jpg', 'images/modul (12).jpg',
-  'images/modul (13).jpg', 'images/modul (14).jpg', 'images/modul (15).jpg',
-  'images/modul (16).jpg', 'images/modul (17).jpg', 'images/modul (18).jpg',
-  'images/modul (19).jpg', 'images/modul (20).jpg', 'images/modul (21).jpg',
-  'images/modul (22).jpg', 'images/modul (23).jpg', 'images/modul (24).jpg',
-  'images/modul (25).jpg', 'images/modul (26).jpg', 'images/modul (27).jpg',
-  'images/modul (28).jpg', 'images/modul (29).jpg', 'images/modul (30).jpg',
-  'images/modul (31).jpg', 'images/modul (32).jpg', 'images/modul (33).jpg',
-  'images/modul (34).jpg', 'images/modul (35).jpg', 'images/modul (36).jpg',
-  'images/modul (37).jpg', 'images/modul (38).jpg', 'images/modul (39).jpg',
-  'images/modul (40).jpg', 'images/modul (41).jpg', 'images/modul (42).jpg',
-  'images/modul (43).jpg', 'images/modul (44).jpg', 'images/modul (45).jpg',
-  'images/modul (46).jpg', 'images/modul (47).jpg', 'images/modul (48).jpg',
-  'images/modul (49).jpg', 'images/modul (50).jpg', 'images/modul (51).jpg',
-  'images/modul (52).jpg', 'images/modul (53).jpg', 'images/modul (54).jpg',
-  'images/modul (55).jpg', 'images/modul (56).jpg', 'images/modul (57).jpg',
-  'images/modul (58).jpg', 'images/modul (59).jpg', 'images/modul (60).jpg',
-  'images/modul (61).jpg', 'images/modul (62).jpg', 'images/modul (63).jpg',
-  'images/modul (64).jpg', 'images/modul (65).jpg', 'images/modul (66).jpg',
-  'images/grandlaunch.png', 'images/modul (68).jpg', 'images/modul (69).jpg',
-  'images/modul (70).jpg', 'images/modul (71).jpg', 'images/ibuk.jpeg',
-  'images/kriptoid.jpeg','images/entry.jpg','images/blockchain.jpg',
-  'images/crypto-exit.jpeg','images/management.jpg','images/cbdc.jpg',
-  'images/bigcrypto.png','images/defi-dex.jpg',
+const modulList = [
+  {
+    judul: 'Crypto Fibonacci Secret',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (1).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkR0YG-DjruO4JCXRqX49smy']
+  },
+  {
+    judul: 'Cara Mencari Altcoin Yang Minimal Akan Naik 10x',
+    kategori: 'Live Class',
+    gambar: 'images/modul (2).jpg',
+    links: ['https://www.youtube.com/watch?v=zFz6tVbQaD0&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=8']
+  },
+  {
+    judul: '10x Your Portofolio This Bullrun',
+    kategori: 'Live Class',
+    gambar: 'images/modul (3).jpg',
+    links: ['https://www.youtube.com/watch?v=xLHo4Bsc6GI']
+  },
+  {
+    judul: 'Cara Screening Altcoin dari 0',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (4).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQXePTmW6W_diad21w51z3Y']
+  },
+  {
+    judul: 'Security Issues',
+    kategori: 'Smart Contract And Security',
+    gambar: 'images/modul (5).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQe6TAVs9JSZA8MUablgI53']
+  },
+  {
+    judul: 'Menggandakan Portfolio di AI Supercycle',
+    kategori: 'Live Class',
+    gambar: 'images/modul (6).jpg',
+    links: ['https://www.youtube.com/watch?v=qGz-Xvd1Ino']
+  },
+  {
+    judul: 'The Art Of Crypto Trading',
+    kategori: 'Live Class',
+    gambar: 'images/modul (7).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSc7jlBxPbLCQz15nC7TF3A']
+  },
+  {
+    judul: 'Bitcoin Anonymity',
+    kategori: 'Bitcoin',
+    gambar: 'images/modul (8).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkRMN8cT3ayvHW5QSktpcZY4']
+  },
+  {
+    judul: 'Bitcoin Transaction In Depth',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (9).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTfrsBywgQoFOgTsxXVX5uX']
+  },
+  {
+    judul: 'Blockchain Interoperability',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (10).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSvkLu0dbp4IeId43vvNahl']
+  },
+  {
+    judul: 'Blockchain Oracles',
+    kategori: 'D App',
+    gambar: 'images/modul (11).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTzy3oLzGVsxOZEs83i5FdD']
+  },
+  {
+    judul: 'Blockchain Trilemma',
+    kategori: 'Blockchain Fundamental',
+    gambar: 'images/modul (12).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQn_UfP0iKtPn7noK1wX3RT']
+  },
+  {
+    judul: 'BTC to Alts Switching Timing',
+    kategori: 'Live Class',
+    gambar: 'images/modul (13).jpg',
+    links: ['https://www.youtube.com/watch?v=NSDsnoD7L5c']
+  },
+  {
+    judul: 'Consensus: Proof of ... And Security Premises',
+    kategori: 'Blockchain Fundamental',
+    gambar: 'images/modul (14).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQbhfROXcOUNWKSg0Xtviik']
+  },
+  {
+    judul: 'Cross-Chain Technology',
+    kategori: 'D App',
+    gambar: 'images/modul (15).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTz1unLivD9WE2vVCi1iPqd']
+  },
+  {
+    judul: 'Cryptocurrency Fundamentals',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (16).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSX4m6Ai7I6-G-ZVwJ34Jbk']
+  },
+  {
+    judul: 'Cryptocurrency Security',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (17).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkT5CyMokqqvnfbz7cCANEIf']
+  },
+  {
+    judul: 'Crypto Harmonic Trading',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (18).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTA7R16GuLHJCclg8YDE-F5']
+  },
+  {
+    judul: 'Crypto Investing',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (19).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkR5FlKi_LUpeByO_XYUg2HG']
+  },
+  {
+    judul: 'Crypto Investing Alpha',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (20).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQ0AmpJ6ZQAONsFC9P4ICPo']
+  },
+  {
+    judul: 'Crypto Investing Guides',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (21).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQSQv_b0lmx-MpAehS_i943']
+  },
+  {
+    judul: 'Crypto Investing Strategy',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (22).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkS4_pIcxNHO-xTHYJroSVmq']
+  },
+  {
+    judul: 'Crypto Investing Tools',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (23).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQqOhQqJzgNOfABfqDDkSnu']
+  },
+  {
+    judul: 'Crypto Money Psychology',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (24).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTq1Y05AAKuJHjay2Ox5-G5']
+  },
+  {
+    judul: 'Crypto Order Flow',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (25).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSLvSG3eOhFZSbg5NCJjHy4']
+  },
+  {
+    judul: 'Crypto Research',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (26).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQ9uaFae78dyUQIQCqBDuL0']
+  },
+  {
+    judul: 'Crypto Self-Custody',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (27).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQ2ZvwjsNJqzHxPMzOHsqeY']
+  },
+  {
+    judul: 'Crypto Smart Money',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (28).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSjFvK-EsAxVEqIM0E7cEwx']
+  },
+  {
+    judul: 'Crypto Technical Indicators',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (29).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTkQfZFKlN7LTuErnCDxGSk']
+  },
+    {
+    judul: 'Crypto Technical Indicators',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (29).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTkQfZFKlN7LTuErnCDxGSk']
+  },
+  {
+    judul: 'Crypto Spot Trading',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (30).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSW_Ln6qn8YlhFO1YpNxlgA']
+  },
+  {
+    judul: 'Crypto Trading Psychology',
+    kategori: 'Live Class',
+    gambar: 'images/modul (31).jpg',
+    links: ['https://www.youtube.com/watch?v=Sz9BJzwP_98']
+  },
+  {
+    judul: 'Crypto Wyckoff Trading',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (32).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQJOkiNWJu8NtD40fUegcZe']
+  },
+  {
+    judul: 'DEX Trading Tutorial',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (33).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSq5ArXxxCBo02EWes4Rawp']
+  },
+  {
+    judul: 'Digital Money and Double Spending',
+    kategori: 'Blockchain Fundamental',
+    gambar: 'images/modul (34).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkTyoODXGPPClW-b_jQkKE9X']
+  },
+  {
+    judul: 'Ethereum: Programmable Money',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (35).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkT56nVEJiQz7tRyoC6kE5Oq']
+  },
+  {
+    judul: 'Crypto Order Flow',
+    kategori: 'Live Class',
+    gambar: 'images/modul (36).jpg',
+    links: ['https://www.youtube.com/watch?v=LWd2d4O0YQY']
+  },
+  {
+    judul: 'Crypto Trading Guide',
+    kategori: 'E Book',
+    gambar: 'images/modul (37).jpg',
+    links: ['https://drive.google.com/file/d/1acE6k2fKifSqi6hk_SCjVuktDCjep6aP/view']
+  },
+  {
+    judul: 'Kamus Pattern Crypto',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (38).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQ3zJrpA2l_POSXmq4dZrTv']
+  },
+  {
+    judul: 'Keys, Wallets, & How They Work',
+    kategori: 'Blockchain Fundamental',
+    gambar: 'images/modul (39).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkRI2Np0SHo8E4Pr2EuOBCHR']
+  },
+  {
+    judul: 'Kopi Darat Akademi Crypto',
+    kategori: 'Live Class',
+    gambar: 'images/modul (40).jpg',
+    links: ['https://www.youtube.com/watch?v=F-Wu24Ppx8k']
+  },
+  {
+    judul: 'Kuliah Crypto',
+    kategori: 'Live Class',
+    gambar: 'images/modul (41).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkS4tAzW6rIx5yW8Pi4NZua-']
+  },
+  {
+    judul: 'Layer 2: Rollups',
+    kategori: 'Smart Contract And Security',
+    gambar: 'images/modul (42).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkT5XG1DvuE7gF4wO3rDEqWl']
+  },
+  {
+    judul: 'Margin Call Khusus Member',
+    kategori: 'Live Class',
+    gambar: 'images/modul (43).jpg',
+    links: ['https://www.youtube.com/watch?v=ZDnIJunBB-A']
+  },
+  {
+    judul: 'Crypto Market Outlook 2025',
+    kategori: 'Live Class',
+    gambar: 'images/modul (44).jpg',
+    links: ['https://www.youtube.com/watch?v=CSEGkBTAFvI']
+  },
+  {
+    judul: 'Crypto Harmonic Trading',
+    kategori: 'Live Class',
+    gambar: 'images/modul (45).jpg',
+    links: ['https://www.youtube.com/watch?v=IVpagLD5fXI']
+  },
+  {
+    judul: 'Cryoto Smart Money',
+    kategori: 'Live Class',
+    gambar: 'images/modul (46).jpg',
+    links: ['https://www.youtube.com/watch?v=eqwtVcW9rI4']
+  },
+  {
+    judul: 'Mastering Altcoins',
+    kategori: 'E Book',
+    gambar: 'images/modul (47).jpg',
+    links: ['https://drive.google.com/file/u/1/d/1BPYTgwq6QxD9Ojo-PHPIBmlHSmjT-Eph/view?usp=drivesdk']
+  },
+  {
+    judul: 'Mastering Altcoin',
+    kategori: 'Live Class',
+    gambar: 'images/modul (48).jpg',
+    links: ['https://www.youtube.com/watch?v=9Yfdc8ALR5A']
+  },
+  {
+    judul: 'Monero: Anonymity',
+    kategori: 'Blockchain Technology',
+    gambar: 'images/modul (49).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQIJ4LzQgSxQEpR6xNMPUt5']
+  },
+  {
+    judul: 'Narratives for 2024 Bull Run',
+    kategori: 'Live Class',
+    gambar: 'images/modul (50).jpg',
+    links: ['https://www.youtube.com/watch?v=D68XtnGuwVA']
+  },
+  {
+    judul: 'Narrative Research',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (51).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkRyIifhLD_aSoI8i667P-lt']
+  },
+  {
+    judul: 'Token Unlock Trading Strategy',
+    kategori: 'Crypto Trading',
+    gambar: 'images/modul (52).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkSLNB0rb543lwOgfpr33o-l']
+  },
+  {
+    judul: 'Octobull',
+    kategori: 'Live Class',
+    gambar: 'images/modul (53).jpg',
+    links: ['https://www.youtube.com/watch?v=oaK71Ar3fjE']
+  },
+  {
+    judul: 'Crypto Investing Principles',
+    kategori: 'E Book',
+    gambar: 'images/modul (54).jpg',
+    links: ['https://drive.google.com/file/d/1acnJl-Lu-HR6jTZp-h3VsMkuTzxLCg-Y/view']
+  },
+  {
+    judul: '2025 Crypto Regulation',
+    kategori: 'Live Class',
+    gambar: 'images/modul (55).jpg',
+    links: ['https://www.youtube.com/watch?si=8YnocBpuPy1M3DnE&v=WzXHL9cfSko&feature=youtu.be']
+  },
+  {
+    judul: 'Riding The Crypto Super Mega Cycle',
+    kategori: 'Live Class',
+    gambar: 'images/modul (56).jpg',
+    links: ['https://www.youtube.com/watch?si=juIyko6h7p7U']
+  },
+  {
+    judul: 'Sales Mastery',
+    kategori: 'Crypto Investing',
+    gambar: 'images/modul (57).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkR_axjnn8ocScFYtTLDQp08']
+  },
+  {
+    judul: 'Crypto Investing Principles',
+    kategori: 'E Book',
+    gambar: 'images/modul (58).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkRYwMEgIbFQgRvUAxT29H2C']
+  },
+  {
+    judul: 'Crypto Smart Money',
+    kategori: 'Live Class',
+    gambar: 'images/modul (59).jpg',
+    links: ['https://drive.google.com/file/d/1cEwqBoLQzkxA_WAa0lgLW0STVuKOdBr0/view?usp=drivesdk']
+  },
+  {
+    judul: 'Smart Contract Development',
+    kategori: 'Live Class',
+    gambar: 'images/modul (60).jpg',
+    links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQoSi4_cEe8sWlBdGM5BOJx']
+  },
+  {
+  judul: 'Smart Contract Security',
+  kategori: 'Live Class',
+  gambar: 'images/modul (61).jpg',
+  links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQ9BATsPJRWyNRu5acx_8hl']
+},
+{
+  judul: 'Strategi Jadi Milliarder Dari Crypto',
+  kategori: 'Smart Contract And Security',
+  gambar: 'images/modul (62).jpg',
+  links: ['https://www.youtube.com/watch?si=VQflay_1E61CIZiH&v=zFz6tVbQaD0&feature=youtu.be']
+},
+{
+  judul: 'Strategi Trading Crypto Untk Dapetin 100 Juta Pertama dari 0',
+  kategori: 'Live Class',
+  gambar: 'images/modul (63).jpg',
+  links: ['https://www.youtube.com/watch?v=oYYfuxkXc8E&list=PL1hlgGm52pkSs8IIOw_RbcvStT95THLmv&index=4']
+},
+{
+  judul: 'Crypto Trading Psychology',
+  kategori: 'Smart Contract And Security',
+  gambar: 'images/modul (64).jpg',
+  links: ['https://drive.google.com/file/d/1ztF-QGPQdWPFw1jXVrgp0c8u3GN4v0hG/view?usp=sharing']
+},
+{
+  judul: '2030 The Great Reset',
+  kategori: 'Smart Contract And Security',
+  gambar: 'images/modul (65).jpg',
+  links: ['https://www.youtube.com/watch?v=Zpp4ja9DOFo']
+},
+{
+  judul: 'Tokens',
+  kategori: 'E Book',
+  gambar: 'images/modul (66).jpg',
+  links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQWYCkR7wKpE1Dd48V2DHff']
+},
+{
+  judul: 'Akademi Crypto Grand Launching',
+  kategori: 'Live Class',
+  gambar: 'images/grandlaunch.png',
+  links: ['https://www.youtube.com/watch?v=Vk2umj18kCw&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=1']
+},
+{
+  judul: 'Types of Accounts',
+  kategori: 'Smart Contract And Security',
+  gambar: 'images/modul (68).jpg',
+  links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQ2Wn9wTM-2KDfnIisgNfIo']
+},
+{
+  judul: 'US Election Market Outlook',
+  kategori: 'Live Class',
+  gambar: 'images/modul (69).jpg',
+  links: ['https://www.youtube.com/watch?v=lR9sISGi-Mk']
+},
+{
+  judul: 'UTXO Model vs Account Model',
+  kategori: 'Smart Contract And Security',
+  gambar: 'images/modul (70).jpg',
+  links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkS-sRyPe6KWPYsuzzdRI-wf']
+},
+{
+  judul: 'What is a Smart Contract',
+  kategori: 'Smart Contract And Security',
+  gambar: 'images/modul (71).jpg',
+  links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQX_hJaqiidqKyQ89GbbuCb']
+},
+{
+  judul: '100+ E-Book Tentang Investasi',
+  kategori: 'E Book',
+  gambar: 'images/ibuk.jpeg',
+  links: ['https://drive.google.com/drive/folders/1hcVU_iOEG_-v5SwHAJulLTPYXdpRE3pt']
+},
+{
+  judul: 'Monero Anomynity',
+  kategori: 'Blockchain Technology',
+  gambar: 'images/kriptoid.jpeg',
+  links: ['https://www.youtube.com/playlist?list=PL1hlgGm52pkQIJ4LzQgSxQEpR6xNMPUt5']
+},
+{
+  judul: 'Crypto Entry Mastery',
+  kategori: 'Crypto Trading',
+  gambar: 'images/entry.jpg',
+  links: ['https://drive.google.com/drive/folders/1MnhnpJ5W4TYV98zSranF8Hb5JDv-HTad']
+},
+{
+  judul: 'Blockchain And AI',
+  kategori: 'Blockchain Technology',
+  gambar: 'images/blockchain.jpg',
+  links: ['https://drive.google.com/drive/folders/1aEK8eJDlMh3IuH4ryhQ8MYqXpMvyB67A']
+},
+{
+  judul: 'Crypto Exit Strategy',
+  kategori: 'Crypto Trading',
+  gambar: 'images/crypto-exit.jpeg',
+  links: ['https://drive.google.com/drive/folders/19nYjtrdsj6RWuFxI7XZtdAAndViQ7Z3c']
+},
+{
+  judul: 'Crypto Portofolio Management',
+  kategori: 'Crypto Investing',
+  gambar: 'images/management.jpg',
+  links: ['https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-']
+},
+{
+  judul: 'Central Bank Digital Currency',
+  kategori: 'DePIN',
+  gambar: 'images/cbdc.jpg',
+  links: ['https://drive.google.com/file/d/1yfZNuAZUXSr6T5Yq-Hpqwc6jQnvueurQ/edit']
+},
+{
+  judul: 'Big Crypto Thesis',
+  kategori: 'Live Class',
+  gambar: 'images/bigcrypto.png',
+  links: ['https://www.youtube.com/watch?v=nAvj4rgkhFU&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=2']
+},
+{
+  judul: 'DeFi: DEX',
+  kategori: 'D App',
+  gambar: 'images/defi-dex.jpg',
+  links: [
+    { url: 'https://drive.google.com/file/d/1Zioo6D3RmEZ1aE_Qar19zv4SpegmbEJw/view?usp=drive_link', label: 'DeFi Lending' },
+    { url: 'https://drive.google.com/file/d/1PtJSyYham4Nc48bMBuepUwyLni5Nepsu', label: 'Flash Loan' }
+  ]
+},
+{
+  judul: 'Identifying Scam Tricks & Security Tips',
+  kategori: 'Web3 Safety',
+  gambar: 'images/identifying-Scam-Tricks-&-Security-Tips.jpg',
+  links: [
+    { url: 'https://drive.google.com/file/d/1yruQgIoFtjkd7dgqE-z1DwbYnnIpdPrz', label: 'Pentingnya Web3 Safety' },
+    { url: 'https://drive.google.com/file/d/1Tv_zC8D8VqG5HzgUxZO7GxO8bZdvaHZR', label: 'Secure Private Key and Seed Phrase' },
+    { url: 'https://drive.google.com/file/d/1szWQy7GC18WhwTF7VHTvGUn1pRcEX1yS', label: 'Job Interview Scam' },
+    { url: 'https://drive.google.com/file/d/1l4VgKUCDxhUjPy3aXYFgZqT5KWmW733l', label: 'Developer Job Scam' },
+    { url: 'https://drive.google.com/file/d/1Bjgx0NelYpwRUxcjxRWPojPWujSQMslp', label: 'Fake Website scam' },
+    { url: 'https://drive.google.com/file/d/1oboPu1MuLDgB8hw3pyYHqCod2x9McBAH', label: 'Malicious Files Dari Sumber Tak Dikenal' },
+    { url: 'https://drive.google.com/file/d/1pEjUnFTe8f7xfZc2HHD_ZR-wK9VKInLG', label: 'P2P Scam Risk' },
+    { url: 'https://drive.google.com/file/d/1F5730m-ytq1H83he2NFaOrHqJwoi_c8N', label: 'Social Engineering' }
+  ]
+},
 
-];
-
-const judulModul = [
-  'Crypto Fibonacci Secret', 'Cara Mencari Altcoin Yang Minimal Akan Naik 10x', '10x Your Portofolio This Bullrun',
-  'Cara Screening Altcoin dari 0', 'Security Issues', 'Menggandakan Portfolio di AI Supercycle',
-  'The Art Of Crypto Trading', 'Bitcoin Anonymity', 'Bitcoin Transaction In Depth',
-  'Blockchain Interoperability', 'Blockchain Oracles', 'Blockchain Trilemma',
-  'BTC to Alts Switching Timing', 'Consensus: Proof of ... And Security Premises', 'Cross-Chain Technology',
-  'Cryptocurrency Fundamentals', 'Cryptocurrency Security', 'Crypto Harmonic Trading',
-  'Crypto Investing', 'Crypto Investing Alpha', 'Crypto Investing Guides',
-  'Crypto Investing Strategy', 'Crypto Investing Tools', 'Crypto Money Psychology',
-  'Crypto Order Flow', 'Crypto Research', 'Crypto Self-Custody',
-  'Crypto Smart Money', 'Crypto Technical Indicators', 'Crypto Spot Trading',
-  'Crypto Trading Psychology', 'Crypto Wyckoff Trading', 'DEX Trading Tutorial',
-  'Digital Money and Double Spending', 'Ethereum: Programmable Money', 'Crypto Order Flow',
-  'Crypto Trading Guide', 'Kamus Pattern Crypto', 'Keys, Wallets, & How They Work',
-  'Kopi Darat Akademi Crypto', 'Kuliah Crypto', 'Layer 2: Rollups',
-  'Margin Call Khusus Member', 'Crypto Market Outlook 2025', 'Crypto Harmonic Trading',
-  'Cryoto Smart Money', 'Mastering Altcoins', 'Mastering Altcoin',
-  'Monero: Anonymity', 'Narratives for 2024 Bull Run', 'Narrative Research',
-  'Token Unlock Trading Strategy', 'Octobull', 'Crypto Investing Principles',
-  '2025 Crypto Regulation', 'Riding The Crypto Super Mega Cycle', 'Sales Mastery',
-  'Crypto Investing Principles', 'Crypto Smart Money', 'Smart Contract Development',
-  'Smart Contract Security', 'Strategi Jadi Milliarder Dari Crypto', 'Strategi Trading Crypto Untk Dapetin 100 Juta Pertama dari 0',
-  'Crypto Trading Psychology', '2030 The Great Reset', 'Tokens',
-  'Akademi Crypto Grand Launching', 'Types of Accounts', 'US Election Market Outlook',
-  'UTXO Model vs Account Model', 'What is a Smart Contract', '100+ E-Book Tentang Investasi',
-  'Monero Anomynity','Crypto Entry Mastery','Blockchain And AI',
-  'Crypto Exit Strategy','Crypto Portofolio Management','Central Bank Digital Currency',
-  'Big Crypto Thesis','DeFi: DEX',
-];
-
-// Menentukan kategori manual untuk setiap modul
-const kategoriModul = [
-  'Crypto Trading', 'Live Class', 'Live Class', 'Crypto Trading', 'Smart Contract And Security', 'Live Class',
-  'Live Class', 'Bitcoin', 'Blockchain Technology', 'Blockchain Technology', 'D App', 'Blockchain Fundamental',
-  'Live Class', 'Blockchain Fundamental', 'D App', 'Blockchain Technology', 'Blockchain Technology', 'Crypto Trading',
-  'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Investing', 'Crypto Trading',
-  'Crypto Trading', 'Blockchain Technology', 'Crypto Investing', 'Crypto Trading', 'Crypto Trading', 'Crypto Trading',
-  'Live Class', 'Crypto Trading', 'Crypto Trading', 'Blockchain Fundamental', 'Blockchain Technology', 'Live Class',
-  'E Book', 'Crypto Trading', 'Blockchain Fundamental', 'Live Class', 'Live Class', 'Smart Contract And Security',
-  'Live Class', 'Live Class', 'Live Class', 'Live Class', 'E Book', 'Live Class', 'Blockchain Technology',
-  'Live Class', 'Crypto Trading', 'Crypto Trading', 'Live Class', 'E Book', 'Live Class',
-  'Live Class', 'Live Class', 'Crypto Investing', 'E Book', 'Blockchain Technology', 'Blockchain Technology',
-  'Live Class', 'Crypto Trading', 'E Book', 'Live Class', 'Smart Contract And Security', 'Live Class',
-  'Smart Contract And Security', 'Live Class', 'Smart Contract And Security', 'Smart Contract And Security', 'E Book','Blockchain Technology','Crypto Trading',
-  'Blockchain Technology','Crypto Trading','Crypto Investing','DePIN','Live Class','D App',
-];
-
-// Array link YouTube untuk setiap modul
-const youtubeLinks = [
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkR0YG-DjruO4JCXRqX49smy', 
-  'https://www.youtube.com/watch?v=zFz6tVbQaD0&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=8', 
-  'https://www.youtube.com/watch?v=xLHo4Bsc6GI',
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQXePTmW6W_diad21w51z3Y', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQe6TAVs9JSZA8MUablgI53', 
-  'https://www.youtube.com/watch?v=qGz-Xvd1Ino', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSc7jlBxPbLCQz15nC7TF3A', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkRMN8cT3ayvHW5QSktpcZY4', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTfrsBywgQoFOgTsxXVX5uX', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSvkLu0dbp4IeId43vvNahl', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTzy3oLzGVsxOZEs83i5FdD', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQn_UfP0iKtPn7noK1wX3RT', 
-  'https://www.youtube.com/watch?v=NSDsnoD7L5c', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQbhfROXcOUNWKSg0Xtviik', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTz1unLivD9WE2vVCi1iPqd', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSX4m6Ai7I6-G-ZVwJ34Jbk', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkT5CyMokqqvnfbz7cCANEIf', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTA7R16GuLHJCclg8YDE-F5', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkR5FlKi_LUpeByO_XYUg2HG', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ0AmpJ6ZQAONsFC9P4ICPo', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQSQv_b0lmx-MpAehS_i943', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkS4_pIcxNHO-xTHYJroSVmq', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQqOhQqJzgNOfABfqDDkSnu', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTq1Y05AAKuJHjay2Ox5-G5', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSLvSG3eOhFZSbg5NCJjHy4', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ9uaFae78dyUQIQCqBDuL0', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ2ZvwjsNJqzHxPMzOHsqeY', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSjFvK-EsAxVEqIM0E7cEwx', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTkQfZFKlN7LTuErnCDxGSk', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSW_Ln6qn8YlhFO1YpNxlgA', 
-  'https://www.youtube.com/watch?v=Sz9BJzwP_98', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQJOkiNWJu8NtD40fUegcZe', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSq5ArXxxCBo02EWes4Rawp', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkTyoODXGPPClW-b_jQkKE9X', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkT56nVEJiQz7tRyoC6kE5Oq', 
-  'https://www.youtube.com/watch?v=LWd2d4O0YQY', 
-  'https://drive.google.com/file/d/1acE6k2fKifSqi6hk_SCjVuktDCjep6aP/view',
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ3zJrpA2l_POSXmq4dZrTv', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkRI2Np0SHo8E4Pr2EuOBCHR', 
-  'https://www.youtube.com/watch?v=F-Wu24Ppx8k', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkS4tAzW6rIx5yW8Pi4NZua-', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkT5XG1DvuE7gF4wO3rDEqWl', 
-  'https://www.youtube.com/watch?v=ZDnIJunBB-A', 
-  'https://www.youtube.com/watch?v=CSEGkBTAFvI', 
-  'https://www.youtube.com/watch?v=IVpagLD5fXI', 
-  'https://www.youtube.com/watch?v=eqwtVcW9rI4', 
-  'https://drive.google.com/file/u/1/d/1BPYTgwq6QxD9Ojo-PHPIBmlHSmjT-Eph/view?usp=drivesdk', 
-  'https://www.youtube.com/watch?v=9Yfdc8ALR5A', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQIJ4LzQgSxQEpR6xNMPUt5', 
-  'https://www.youtube.com/watch?v=D68XtnGuwVA', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkRyIifhLD_aSoI8i667P-lt', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkSLNB0rb543lwOgfpr33o-l', 
-  'https://www.youtube.com/watch?v=oaK71Ar3fjE', 
-  'https://drive.google.com/file/d/1acnJl-Lu-HR6jTZp-h3VsMkuTzxLCg-Y/view', 
-  'https://www.youtube.com/watch?si=8YnocBpuPy1M3DnE&v=WzXHL9cfSko&feature=youtu.be', 
-  'https://www.youtube.com/watch?si=juIyko6h7p7Uutvl&v=aObCLswItww&feature=youtu.be', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkR_axjnn8ocScFYtTLDQp08', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkRYwMEgIbFQgRvUAxT29H2C', 
-  'https://drive.google.com/file/d/1cEwqBoLQzkxA_WAa0lgLW0STVuKOdBr0/view?usp=drivesdk', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQoSi4_cEe8sWlBdGM5BOJx', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ9BATsPJRWyNRu5acx_8hl', 
-  'https://www.youtube.com/watch?si=VQflay_1E61CIZiH&v=zFz6tVbQaD0&feature=youtu.be', 
-  'https://www.youtube.com/watch?v=oYYfuxkXc8E&list=PL1hlgGm52pkSs8IIOw_RbcvStT95THLmv&index=4', 
-  'https://drive.google.com/file/d/1ztF-QGPQdWPFw1jXVrgp0c8u3GN4v0hG/view?usp=sharing', 
-  'https://www.youtube.com/watch?v=Zpp4ja9DOFo', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQWYCkR7wKpE1Dd48V2DHff', 
-  'https://www.youtube.com/watch?v=Vk2umj18kCw&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=1', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQ2Wn9wTM-2KDfnIisgNfIo', 
-  'https://www.youtube.com/watch?v=lR9sISGi-Mk', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkS-sRyPe6KWPYsuzzdRI-wf', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQX_hJaqiidqKyQ89GbbuCb', 
-  'https://drive.google.com/drive/folders/1hcVU_iOEG_-v5SwHAJulLTPYXdpRE3pt', 
-  'https://www.youtube.com/playlist?list=PL1hlgGm52pkQIJ4LzQgSxQEpR6xNMPUt5',  
-  'https://drive.google.com/drive/folders/1MnhnpJ5W4TYV98zSranF8Hb5JDv-HTad',
-  'https://drive.google.com/drive/folders/1aEK8eJDlMh3IuH4ryhQ8MYqXpMvyB67A',
-  'https://drive.google.com/drive/folders/19nYjtrdsj6RWuFxI7XZtdAAndViQ7Z3c',
-  'https://drive.google.com/drive/folders/1bm0CAA17swuamSzM_gn-clEGnpDyKmk-',
-  'https://drive.google.com/file/d/1yfZNuAZUXSr6T5Yq-Hpqwc6jQnvueurQ/edit',
-  'https://www.youtube.com/watch?v=nAvj4rgkhFU&list=PL1hlgGm52pkQOw8z8vneRSlc-mBRW73aq&index=2',
-  'https://drive.google.com/file/d/1Zioo6D3RmEZ1aE_Qar19zv4SpegmbEJw/view?usp=drive_link'
 
 
 
@@ -176,37 +521,71 @@ function generateModul(filteredKeyword = '') {
     const row = document.createElement('div');
     row.classList.add('kategori-row');
 
-    let found = false;
+    const modulDalamKategori = modulList.filter(modul =>
+      modul.kategori === kategori &&
+      modul.judul.toLowerCase().includes(filteredKeyword)
+    );
 
-    for (let i = 0; i < judulModul.length; i++) {
-      if (
-        kategoriModul[i] === kategori &&
-        judulModul[i].toLowerCase().includes(filteredKeyword)
-      ) {
+    if (modulDalamKategori.length > 0) {
+      modulDalamKategori.forEach(modulData => {
         const modul = document.createElement('div');
         modul.classList.add('modul');
 
-        const link = document.createElement('a');
-        link.href = youtubeLinks[i] || '#';
-        link.target = '_blank';
-
         const img = document.createElement('img');
-        img.src = gambarModul[i];
-        img.alt = judulModul[i];
+        img.src = modulData.gambar;
+        img.alt = modulData.judul;
 
         const h3 = document.createElement('h3');
-        h3.innerText = judulModul[i];
+        h3.innerText = modulData.judul;
 
-        link.appendChild(img);
-        link.appendChild(h3);
-        modul.appendChild(link);
+        modul.appendChild(img);
+        modul.appendChild(h3);
+
+        const links = modulData.links;
+
+        if (links.length === 1) {
+          const linkObj = links[0];
+          const url = typeof linkObj === 'string' ? linkObj : linkObj.url;
+          const label = typeof linkObj === 'string' ? '▶️ Tonton' : `▶️ ${linkObj.label}`;
+
+          const btn = document.createElement('a');
+          btn.href = url;
+          btn.target = '_blank';
+          btn.classList.add('modul-button');
+          btn.innerText = label;
+          modul.appendChild(btn);
+        } else {
+          const select = document.createElement('select');
+          select.classList.add('modul-select');
+
+          const defaultOption = document.createElement('option');
+          defaultOption.innerText = '▶️ Pilih Video';
+          defaultOption.disabled = true;
+          defaultOption.selected = true;
+          select.appendChild(defaultOption);
+
+          links.forEach((linkObj, index) => {
+            const option = document.createElement('option');
+            option.value = typeof linkObj === 'string' ? linkObj : linkObj.url;
+            option.innerText = typeof linkObj === 'string'
+              ? `Tonton ${index + 1}`
+              : linkObj.label || `Tonton ${index + 1}`;
+            select.appendChild(option);
+          });
+
+          select.addEventListener('change', function () {
+            if (this.value) {
+              window.open(this.value, '_blank');
+              this.selectedIndex = 0;
+            }
+          });
+
+          modul.appendChild(select);
+        }
+
         row.appendChild(modul);
+      });
 
-        found = true;
-      }
-    }
-
-    if (found) {
       const section = document.createElement('div');
       section.classList.add('kategori-section');
 
@@ -220,6 +599,9 @@ function generateModul(filteredKeyword = '') {
     }
   });
 }
+
+
+
 
 // ========== EVENT SEARCH ==========
 const searchInput = document.getElementById('search-input');
