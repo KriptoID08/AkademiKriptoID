@@ -534,6 +534,43 @@ const modulList = [
     { url: 'https://drive.google.com/file/d/1-gxmmFb5LRSEoyIjiTSqKlAebhYJ_X0y/view?usp=drive_link', label: 'Mendalami Tokonemics Project' },
   ]
 },
+{
+  judul: 'Mind Management',
+  kategori: 'Crypto Trading',
+  gambar: 'images/minm.jpg',
+  links: ['https://drive.google.com/file/d/19Cbv33SpHqRHURL60fp83t2Lqeg7Yzua/view?usp=drivesdk']
+},
+{
+  judul: 'Ethereum Name Service',
+  kategori: 'D App',
+  gambar: 'images/eth-name.jpg',
+  links: ['https://drive.google.com/file/d/1CiVfhEWJe84t5g84QeiVM5fZeq2nR36V']
+},
+{
+  judul: 'Fan Token',
+  kategori: 'D App',
+  gambar: 'images/fan-token.jpg',
+  links: ['https://drive.google.com/file/d/1fQmbZHPGjgWY4WLjMnLQs2uiVf1hsOsv']
+},
+{
+  judul: 'Real World Assets',
+  kategori: 'D App',
+  gambar: 'images/real-world-assets.jpg',
+  links: ['https://drive.google.com/file/d/1abf7idGOX2w-UtvOkAX3DvIp2x-KrdP-']
+},
+{
+  judul: 'Money Management',
+  kategori: 'Crypto Trading',
+  gambar: 'images/monm.jpg',
+  links: ['https://drive.google.com/file/d/1jbxeeXu7lB-3LcAYsFohbTP-cuoY0JsH/view?usp=drivesdk']
+},
+{
+  judul: 'Decentralized Physical Infrastructure Network',
+  kategori: 'DePIN',
+  gambar: 'images/dpin.jpg',
+  links: ['https://drive.google.com/file/d/1bd1W-032sUOPfvM07IK0abBqUgYMkBtc']
+},
+
 
 
 
