@@ -211,3 +211,45 @@ h1 {
 .modul-select option {
   color: #000;
 }
+
+/* Tombol untuk satu atau banyak video */
+.modul-button {
+  padding: 6px 10px;
+  background-color: #9c27b0;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.modul-button:hover {
+  background-color: #b743cc;
+}
+
+/* Jika modul punya lebih dari 1 tombol link */
+.multi-link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* Untuk opsi dropdown (kalau kamu pakai lagi nanti) */
+.modul-select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1c1c1c;
+  color: #fff;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.modul-select option {
+  color: #000;
+}
+

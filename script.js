@@ -616,40 +616,25 @@ function generateModul(filteredKeyword = '') {
           btn.href = url;
           btn.classList.add('modul-button');
           btn.innerText = label;
-          btn.onclick = () => {
-            window.open(url);
-            return false;
-          };
+          btn.target = '_blank';
           modul.appendChild(btn);
         } else {
-          const select = document.createElement('select');
-          select.classList.add('modul-select');
-
-          const defaultOption = document.createElement('option');
-          defaultOption.innerText = '▶️ Pilih Video';
-          defaultOption.disabled = true;
-          defaultOption.selected = true;
-          select.appendChild(defaultOption);
+          const linkContainer = document.createElement('div');
+          linkContainer.classList.add('multi-link-container');
 
           links.forEach((linkObj, index) => {
-            const option = document.createElement('option');
-            option.value = typeof linkObj === 'string' ? linkObj : linkObj.url;
-            option.innerText = typeof linkObj === 'string'
-              ? `Tonton ${index + 1}`
-              : linkObj.label || `Tonton ${index + 1}`;
-            select.appendChild(option);
+            const url = typeof linkObj === 'string' ? linkObj : linkObj.url;
+            const label = typeof linkObj === 'string' ? `▶️ Tonton ${index + 1}` : `▶️ ${linkObj.label}`;
+
+            const btn = document.createElement('a');
+            btn.href = url;
+            btn.classList.add('modul-button');
+            btn.innerText = label;
+            btn.target = '_blank';
+            linkContainer.appendChild(btn);
           });
 
-          // untuk iOS agar tidak diblokir
-          select.addEventListener('change', function () {
-            const url = this.value;
-            if (url) {
-              window.open(url);
-              this.selectedIndex = 0;
-            }
-          });
-
-          modul.appendChild(select);
+          modul.appendChild(linkContainer);
         }
 
         row.appendChild(modul);
