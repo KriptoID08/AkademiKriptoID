@@ -614,9 +614,12 @@ function generateModul(filteredKeyword = '') {
 
           const btn = document.createElement('a');
           btn.href = url;
-          btn.target = '_blank';
           btn.classList.add('modul-button');
           btn.innerText = label;
+          btn.onclick = () => {
+            window.open(url);
+            return false;
+          };
           modul.appendChild(btn);
         } else {
           const select = document.createElement('select');
@@ -637,9 +640,11 @@ function generateModul(filteredKeyword = '') {
             select.appendChild(option);
           });
 
+          // untuk iOS agar tidak diblokir
           select.addEventListener('change', function () {
-            if (this.value) {
-              window.open(this.value, '_blank');
+            const url = this.value;
+            if (url) {
+              window.open(url);
               this.selectedIndex = 0;
             }
           });
@@ -663,9 +668,6 @@ function generateModul(filteredKeyword = '') {
     }
   });
 }
-
-
-
 
 // ========== EVENT SEARCH ==========
 const searchInput = document.getElementById('search-input');
