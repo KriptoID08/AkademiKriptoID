@@ -13,7 +13,7 @@ h1 {
   color: #fcf6fd;
   margin: 20px;
   font-size: 32px;
-  position: fixed;
+  position: relative;
   top: 10px;
   left: 20px;
   z-index: 2;
@@ -21,8 +21,9 @@ h1 {
 
 /* Logo kanan atas */
 .logo-kanan {
-  position: fixed;
+  position: relative;
   top: 20px;
+  float: right;
   right: 20px;
   width: 60px;
   height: auto;
@@ -34,7 +35,7 @@ h1 {
   width: 60%;
   padding: 10px;
   font-size: 16px;
-  margin: 100px auto 10px auto;
+  margin: 80px auto 10px auto;
   display: block;
   border-radius: 10px;
   border: none;
