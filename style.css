@@ -118,13 +118,6 @@ h1 {
   color: inherit;
 }
 
-/* Halaman Riset & Profil disembunyikan dulu */
-#halaman-riset,
-#halaman-profil {
-  display: none;
-  padding: 120px 20px 80px 20px;
-}
-
 /* Bottom Navigation */
 .bottom-nav {
   position: fixed;
@@ -150,6 +143,66 @@ h1 {
 
 .bottom-nav button:hover {
   color: #9c27b0;
+}
+
+/* Tombol satu video */
+.modul-button {
+  padding: 6px 10px;
+  background-color: #9c27b0;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.modul-button:hover {
+  background-color: #b743cc;
+}
+
+/* Dropdown (pakai <details>) */
+.modul-dropdown {
+  margin-top: 8px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  border: 1px solid #444;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.dropdown-summary {
+  padding: 8px 12px;
+  cursor: pointer;
+  list-style: none;
+  color: #fff;
+}
+
+.modul-dropdown[open] .dropdown-summary::after {
+  content: "▲";
+  float: right;
+}
+.dropdown-summary::after {
+  content: "▼";
+  float: right;
+}
+
+.dropdown-item {
+  padding: 10px 12px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #3a3a3a;
+}
+
+/* Halaman Riset & Profil */
+#halaman-riset,
+#halaman-profil {
+  display: none;
+  padding: 120px 20px 80px 20px;
 }
 
 /* Responsive Mobile */
@@ -179,6 +232,7 @@ h1 {
 
   .modul h3 {
     font-size: 14px;
+    display: none; /* Sembunyikan judul modul di mobile */
   }
 }
 
@@ -194,107 +248,5 @@ h1 {
 
   .modul h3 {
     font-size: 13px;
-  }
-}
-
-.modul-select {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #1c1c1c;
-  color: #fff;
-  margin-top: 8px;
-  width: 100%;
-}
-
-.modul-select option {
-  color: #000;
-}
-
-/* Tombol untuk satu atau banyak video */
-.modul-button {
-  padding: 6px 10px;
-  background-color: #9c27b0;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-  display: inline-block;
-  margin-top: 6px;
-  transition: background-color 0.2s ease;
-}
-
-.modul-button:hover {
-  background-color: #b743cc;
-}
-
-/* Jika modul punya lebih dari 1 tombol link */
-.multi-link-container {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 6px;
-}
-
-/* Untuk opsi dropdown (kalau kamu pakai lagi nanti) */
-.modul-select {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #1c1c1c;
-  color: #fff;
-  margin-top: 8px;
-  width: 100%;
-}
-
-.modul-select option {
-  color: #000;
-}
-
-.dropdown-wrapper {
-  position: relative;
-  margin-top: 8px;
-}
-
-.dropdown-button {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #1c1c1c;
-  color: #fff;
-  width: 100%;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  right: 0;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  border-radius: 8px;
-  z-index: 999;
-  max-height: 180px;
-  overflow-y: auto;
-}
-
-.dropdown-item {
-  padding: 10px;
-  font-size: 14px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.dropdown-item:hover {
-  background-color: #3a3a3a;
-}
-
-@media (max-width: 768px) {
-  .modul h3 {
-    display: none;
   }
 }

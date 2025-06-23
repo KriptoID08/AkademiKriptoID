@@ -601,7 +601,7 @@ function generateModul(filteredKeyword = '') {
 
         const h3 = document.createElement('h3');
         h3.innerText = modulData.judul;
-
+        h3.classList.add('modul-judul');
         modul.appendChild(img);
         modul.appendChild(h3);
 
@@ -622,39 +622,31 @@ function generateModul(filteredKeyword = '') {
           };
           modul.appendChild(btn);
         } else {
-          const dropdownWrapper = document.createElement('div');
-          dropdownWrapper.classList.add('dropdown-wrapper');
+          const details = document.createElement('details');
+          details.classList.add('modul-dropdown');
 
-          const dropdownButton = document.createElement('button');
-          dropdownButton.innerText = '▶️ Pilih Video';
-          dropdownButton.classList.add('dropdown-button');
-
-          const dropdownMenu = document.createElement('div');
-          dropdownMenu.classList.add('dropdown-menu');
-          dropdownMenu.style.display = 'none';
+          const summary = document.createElement('summary');
+          summary.innerText = '▶️ Pilih Video';
+          summary.classList.add('dropdown-summary');
+          details.appendChild(summary);
 
           links.forEach((linkObj, index) => {
-            const item = document.createElement('div');
             const url = typeof linkObj === 'string' ? linkObj : linkObj.url;
             const label = typeof linkObj === 'string'
               ? `Tonton ${index + 1}`
               : linkObj.label || `Tonton ${index + 1}`;
+
+            const item = document.createElement('div');
             item.innerText = label;
             item.classList.add('dropdown-item');
             item.onclick = () => {
               window.open(url, '_blank');
-              dropdownMenu.style.display = 'none';
+              details.removeAttribute('open');
             };
-            dropdownMenu.appendChild(item);
+            details.appendChild(item);
           });
 
-          dropdownButton.onclick = () => {
-            dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
-          };
-
-          dropdownWrapper.appendChild(dropdownButton);
-          dropdownWrapper.appendChild(dropdownMenu);
-          modul.appendChild(dropdownWrapper);
+          modul.appendChild(details);
         }
 
         row.appendChild(modul);
