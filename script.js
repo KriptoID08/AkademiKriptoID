@@ -616,25 +616,45 @@ function generateModul(filteredKeyword = '') {
           btn.href = url;
           btn.classList.add('modul-button');
           btn.innerText = label;
-          btn.target = '_blank';
+          btn.onclick = () => {
+            window.open(url, '_blank');
+            return false;
+          };
           modul.appendChild(btn);
         } else {
-          const linkContainer = document.createElement('div');
-          linkContainer.classList.add('multi-link-container');
+          const dropdownWrapper = document.createElement('div');
+          dropdownWrapper.classList.add('dropdown-wrapper');
+
+          const dropdownButton = document.createElement('button');
+          dropdownButton.innerText = '▶️ Pilih Video';
+          dropdownButton.classList.add('dropdown-button');
+
+          const dropdownMenu = document.createElement('div');
+          dropdownMenu.classList.add('dropdown-menu');
+          dropdownMenu.style.display = 'none';
 
           links.forEach((linkObj, index) => {
+            const item = document.createElement('div');
             const url = typeof linkObj === 'string' ? linkObj : linkObj.url;
-            const label = typeof linkObj === 'string' ? `▶️ Tonton ${index + 1}` : `▶️ ${linkObj.label}`;
-
-            const btn = document.createElement('a');
-            btn.href = url;
-            btn.classList.add('modul-button');
-            btn.innerText = label;
-            btn.target = '_blank';
-            linkContainer.appendChild(btn);
+            const label = typeof linkObj === 'string'
+              ? `Tonton ${index + 1}`
+              : linkObj.label || `Tonton ${index + 1}`;
+            item.innerText = label;
+            item.classList.add('dropdown-item');
+            item.onclick = () => {
+              window.open(url, '_blank');
+              dropdownMenu.style.display = 'none';
+            };
+            dropdownMenu.appendChild(item);
           });
 
-          modul.appendChild(linkContainer);
+          dropdownButton.onclick = () => {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+          };
+
+          dropdownWrapper.appendChild(dropdownButton);
+          dropdownWrapper.appendChild(dropdownMenu);
+          modul.appendChild(dropdownWrapper);
         }
 
         row.appendChild(modul);
