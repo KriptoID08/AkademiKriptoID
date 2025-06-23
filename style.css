@@ -250,3 +250,8 @@ h1 {
     font-size: 13px;
   }
 }
+@media (max-width: 768px) {
+  .modul img {
+    border-radius: 0 !important; /* hilangkan sudut bulat gambar di HP */
+  }
+}
