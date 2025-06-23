@@ -34,7 +34,7 @@ h1 {
   width: 60%;
   padding: 10px;
   font-size: 16px;
-  margin: 80px auto 10px auto;
+  margin: 100px auto 10px auto;
   display: block;
   border-radius: 10px;
   border: none;
@@ -44,7 +44,7 @@ h1 {
 
 /* Modul Container */
 .modul-container {
-  padding: 10px 20px 100px 20px;
+  padding: 5px 20px 100px 20px;
 }
 
 /* Kategori Section */
