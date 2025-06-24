@@ -570,12 +570,114 @@ const modulList = [
   gambar: 'images/dpin.jpg',
   links: ['https://drive.google.com/file/d/1bd1W-032sUOPfvM07IK0abBqUgYMkBtc']
 },
-
-
-
-
 ];
 
+const researchData = [
+  {
+    title: "KAITO ($KAITO) FEB 26 2025",
+    image: "images/pdf1.jpg",
+    link: "https://drive.google.com/file/d/1AhHmt9PiT8j-e1V58vvsVT1gZ-3ZCzLU/view",
+    category: "research"
+  },
+  {
+    title: "BERACHAIN ($BERA) FEB 18 2025",
+    image: "images/pdf2.jpg",
+    link: "https://drive.google.com/file/d/1v1ef6e8ZP6DYg-_vklRascWQDyuLPCtD/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "STROY ($IP) FEB 17 2025",
+    image: "images/pdf3.jpg",
+    link: "https://drive.google.com/file/d/1B1uTa8GX9SJif7mXhc673S6vo6W-UHvd/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "PLUME ($PLUME) FEB 6 2025",
+    image: "images/a.png",
+    link: "https://drive.google.com/file/d/19CI09_nXBMH5uGCpLvXUhJRZpkBd5iHG/view?usp=sharing",
+    category: "research"
+  },
+  {
+    title: "JASMYCOIN ($JASMY) JAN 16 2025",
+    image: "images/b.png",
+    link: "https://drive.google.com/file/d/186Ic051yqptgVvT4YlnY6D9JNocpIz_C/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "RENDER ($RENDER) JAN 16 2025",
+    image: "images/c.png",
+    link: "https://drive.google.com/file/d/19gL0niQ_XfY8I4ZvuVfBG2nJK_nUE-0n/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "POL ($POL) JAN 13 2025",
+    image: "images/d.png",
+    link: "https://drive.google.com/file/d/19I7J-wNp9yPPTgPUdsbR5030iZ3HHPxd/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "ETHEREUM CLASSIC ($ETC) JAN 13 2025",
+    image: "images/e.png",
+    link: "https://drive.google.com/file/d/17T2_jYIbd_qfiXRzlFJqu0PRevxYKb2D/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "FLARE ($FLR) JAN 12 2025",
+    image: "images/f.png",
+    link: "https://drive.google.com/file/d/17YICxaKcNDoUm4_fPyLmSBeEQBOto0uJ/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "COSMOS HUB ($ATOM) JAN 12 2025",
+    image: "images/g.png",
+    link: "https://drive.google.com/file/d/17EkG8bUkmtfuunyYqr7gw0jvs5VCMjqe/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "AAVE ($AAVE) JAN 11 2025",
+    image: "images/h.png",
+    link: "https://drive.google.com/file/d/16InxiCmcM9wFRTifStSgFyfHLlpW4ENd/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "MANTLE ($MNT) JAN 11 2025",
+    image: "images/i.png",
+    link: "https://drive.google.com/file/d/18J2PwB1srIXcy-8M5Vd6rJs9g9cVp6Qs/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "AUTONOLAS ($OLAS) JAN 7 2025",
+    image: "images/j.png",
+    link: "https://drive.google.com/file/d/18jTU7FeOh52xWHwGPDDFLHmh4mwNLjpi/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "PHALA ($PHA) JAN 6 2025",
+    image: "images/k.png",
+    link: "https://drive.google.com/file/d/19BqVZUW9txbPCQzkk4NaoF1zzBApdY38/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "OPTIMISM ($OP) JAN 6 2025",
+    image: "images/l.png",
+    link: "https://drive.google.com/file/d/18k8r-eualydMLvKydkfM7Bf4wsxQmIl6/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "METIS ($METIS) JAN 6 2025",
+    image: "images/m.png",
+    link: "https://drive.google.com/file/d/18TYy7DBMl-jF8LsvkLnPugvt1FEcAStK/view?usp=drive_link",
+    category: "research"
+  },
+  {
+    title: "THORCHAIN ($RUNE) JAN 5 2025",
+    image: "images/n.png",
+    link: "https://drive.google.com/file/d/19mACabN_2wELn1eADBXmlmM-1aIan5f3/view?usp=drive_link",
+    category: "research"
+  }
+];
+
+// ======================= MODUL =======================
 const modulContainer = document.getElementById('modul-container');
 
 function generateModul(filteredKeyword = '') {
@@ -616,10 +718,7 @@ function generateModul(filteredKeyword = '') {
           btn.href = url;
           btn.classList.add('modul-button');
           btn.innerText = label;
-          btn.onclick = () => {
-            window.open(url, '_blank');
-            return false;
-          };
+          btn.target = '_blank';
           modul.appendChild(btn);
         } else {
           const details = document.createElement('details');
@@ -675,3 +774,50 @@ searchInput.addEventListener('input', () => {
 
 // ========== INISIALISASI ==========
 generateModul();
+
+// ======================= RISET =======================
+const risetContainer = document.getElementById('halaman-riset');
+
+function generateResearch() {
+  risetContainer.innerHTML = '';
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('riset-container');
+
+  researchData.forEach(item => {
+    const card = document.createElement('div');
+    card.classList.add('riset-card');
+
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+
+    const title = document.createElement('p');
+    title.innerText = item.title;
+
+    const btn = document.createElement('a');
+    btn.href = item.link;
+    btn.innerText = '📄 Lihat Riset';
+    btn.classList.add('modul-button');
+    btn.target = '_blank';
+
+    card.appendChild(img);
+    card.appendChild(title);
+    card.appendChild(btn);
+    wrapper.appendChild(card);
+  });
+
+  risetContainer.appendChild(wrapper);
+}
+
+// ========== HALAMAN ==========
+const modulPage = document.getElementById('modul-container');
+const risetPage = document.getElementById('halaman-riset');
+const profilPage = document.getElementById('halaman-profil');
+
+function showPage(page) {
+  modulPage.style.display = (page === 'modul') ? 'block' : 'none';
+  risetPage.style.display = (page === 'riset') ? 'block' : 'none';
+  profilPage.style.display = (page === 'profil') ? 'block' : 'none';
+
+  if (page === 'riset') generateResearch();
+}

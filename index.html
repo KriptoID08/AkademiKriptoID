@@ -7,13 +7,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#000000" />
-
-  <!-- Tambahan untuk iOS (Add to Home Screen icon) -->
   <link rel="apple-touch-icon" href="images/logobaru.png" />
 </head>
 <body>
   <!-- Logo kanan atas -->
-  <img src="images/logobaru.png" alt="." class="logo-kanan" />
+  <img src="images/logobaru.png" alt="Logo KriptoID" class="logo-kanan" />
 
   <!-- Judul -->
   <h1>Modul KriptoID</h1>
@@ -24,15 +22,29 @@
   <!-- Container Modul -->
   <div id="modul-container" class="modul-container"></div>
 
+  <!-- Halaman Riset -->
+  <div id="halaman-riset" class="riset-container"></div>
+
+  <!-- Halaman Profil -->
+  <div id="halaman-profil">
+    <p style="text-align: center; padding-top: 40px;">Login dengan Discord untuk melihat profil.</p>
+  </div>
+
   <!-- Script -->
   <script src="script.js"></script>
 
-  <!-- Bottom Navigation -->
-<nav class="bottom-nav">
-  <button onclick="showPage('modul')">Modul</button>
-  <button onclick="showPage('riset')">Riset</button>
-  <button onclick="showPage('profil')">Profil</button>
-</nav>
+  <!-- Container Riset -->
+<div id="halaman-riset" class="riset-container"></div>
 
+<!-- Container Profil -->
+<div id="halaman-profil"></div>
+
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button onclick="showPage('modul')">Modul</button>
+    <button onclick="showPage('riset')">Riset</button>
+    <button onclick="showPage('profil')">Profil</button>
+  </nav>
 </body>
 </html>
