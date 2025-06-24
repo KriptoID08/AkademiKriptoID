@@ -292,3 +292,18 @@ h1 {
   }
 }
 
+@media (max-width: 480px) {
+  .riset-item {
+    width: 180px;
+    padding: 14px;
+  }
+
+  .riset-item img {
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .riset-item .judul {
+    font-size: 15px;
+  }
+}
